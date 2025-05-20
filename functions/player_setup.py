@@ -4,11 +4,19 @@ from discord import app_commands
 from utils.player_handler import create_user_record, update_user_record
 
 COMMON_GENDERS = [
-    "Male",
-    "Female",
+    "Man",
+    "Woman",
     "Non-binary",
-    "Transgender",
+    "Transgender Man",
+    "Transgender Woman",
+    "Trans Fem",
+    "Trans Masc",
     "Genderfluid",
+    "Bigender",
+    "Genderqueer",
+    "Two-Spirit",
+    "Demiboy",
+    "Demigirl",
     "Agender",
     "Other"
 ]

@@ -17,7 +17,7 @@ def create_user_record(guild_id, user_id):
             "pokedex": [],
             "active_pokemon": [],
             "badges": [],
-            "coin": 0,
+            "coin": 100,
             "gender": "",
             "pronouns": "",
             "nickname": "",

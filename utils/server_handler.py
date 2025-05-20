@@ -22,9 +22,9 @@ def setup_server_savedata(guild_id):
     data_file = os.path.join(guild_folder, "data.json")
     if not os.path.exists(data_file):
         generate_server_data(guild_id)
-        print(f"[Output] Created server data for guild {guild_id} at {data_file}")
+        print(f"[Output] Created server data for guild {guild_id}")
     else:
-        print(f"[Output] Server data for guild {guild_id} already exists at {data_file}")
+        print(f"[Output] Server data for guild {guild_id} already exists")
     return guild_folder
 
 def generate_server_data(guild_id):
