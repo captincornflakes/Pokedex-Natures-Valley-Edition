@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Overgrow",
+    "description": "Boosts Grass-type moves when HP is low.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Chlorophyll",
+    "description": "Doubles Speed in sunny weather.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Blaze",
+    "description": "Boosts Fire-type moves when HP is low.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Solar Power",
+    "description": "Boosts Special Attack in sunny weather, but HP decreases.",
+    "attack_bonus": 15,
+    "defense_bonus": -5
+  },
+  {
+    "name": "Torrent",
+    "description": "Boosts Water-type moves when HP is low.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Rain Dish",
+    "description": "Restores HP in rain.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Shield Dust",
+    "description": "Blocks the added effects of attacks taken.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Run Away",
+    "description": "Ensures escape from wild Pokémon.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Shed Skin",
+    "description": "May heal status conditions.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Compound Eyes",
+    "description": "Raises accuracy.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Tinted Lens",
+    "description": "Powers up 'not very effective' moves.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Swarm",
+    "description": "Boosts Bug-type moves when HP is low.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Sniper",
+    "description": "Powers up critical hits.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Keen Eye",
+    "description": "Prevents accuracy loss.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Tangled Feet",
+    "description": "Raises evasion if confused.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Guts",
+    "description": "Boosts Attack if there is a status problem.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Intimidate",
+    "description": "Lowers the foe's Attack stat.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Static",
+    "description": "May paralyze on contact.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Lightning Rod",
+    "description": "Draws in all Electric-type moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Sand Veil",
+    "description": "Raises evasion in a sandstorm.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Sand Rush",
+    "description": "Doubles Speed in a sandstorm.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Poison Point",
+    "description": "May poison on contact.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Rivalry",
+    "description": "Deals more damage to Pokémon of the same gender.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Cute Charm",
+    "description": "May infatuate on contact.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Magic Guard",
+    "description": "Only takes damage from attacks.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Flash Fire",
+    "description": "Powers up Fire-type moves if hit by fire.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Drought",
+    "description": "Summons sunlight in battle.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Competitive",
+    "description": "Raises Special Attack when a stat is lowered.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Inner Focus",
+    "description": "Prevents flinching.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Infiltrator",
+    "description": "Passes through barriers and substitutes.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Effect Spore",
+    "description": "May inflict status on contact.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Damp",
+    "description": "Prevents self-destruction moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Pickup",
+    "description": "May pick up items after battle.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Technician",
+    "description": "Powers up weaker moves.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Damp",
+    "description": "Prevents self-destruction moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Cloud Nine",
+    "description": "Eliminates weather effects.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Vital Spirit",
+    "description": "Prevents sleep.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Defiant",
+    "description": "Raises Attack when stats are lowered.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "No Guard",
+    "description": "Ensures attacks by or against the Pokémon land.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Swift Swim",
+    "description": "Doubles Speed in rain.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Water Absorb",
+    "description": "Restores HP if hit by a Water-type move.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Synchronize",
+    "description": "Passes status conditions to the foe.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Guts",
+    "description": "Boosts Attack if there is a status problem.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Harvest",
+    "description": "May create another Berry after one is used.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Rock Head",
+    "description": "Protects from recoil damage.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Sturdy",
+    "description": "Cannot be knocked out with one hit.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Flame Body",
+    "description": "May burn on contact.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Oblivious",
+    "description": "Prevents infatuation and taunting.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Own Tempo",
+    "description": "Prevents confusion.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Magnet Pull",
+    "description": "Prevents Steel-type Pokémon from escaping.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Early Bird",
+    "description": "Wakes up from sleep twice as fast.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Thick Fat",
+    "description": "Reduces damage from Fire and Ice moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Ice Body",
+    "description": "Restores HP in hail.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Stench",
+    "description": "May cause the target to flinch.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Liquid Ooze",
+    "description": "Damages attackers using draining moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Shell Armor",
+    "description": "Blocks critical hits.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Levitate",
+    "description": "Immune to Ground-type moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Insomnia",
+    "description": "Prevents sleep.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Forewarn",
+    "description": "Reveals the foe's strongest move.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Hyper Cutter",
+    "description": "Prevents Attack reduction.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Soundproof",
+    "description": "Immune to sound-based moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Battle Armor",
+    "description": "Blocks critical hits.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Pressure",
+    "description": "Raises foe's PP usage.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Immunity",
+    "description": "Prevents poisoning.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Serene Grace",
+    "description": "Boosts the likelihood of added effects appearing.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Leaf Guard",
+    "description": "Prevents status conditions in sunny weather.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Scrappy",
+    "description": "Can hit Ghost-type Pokémon with Normal- and Fighting-type moves.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Sniper",
+    "description": "Powers up critical hits.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Illuminate",
+    "description": "Raises the likelihood of meeting wild Pokémon.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Filter",
+    "description": "Reduces damage from super-effective moves.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Technician",
+    "description": "Powers up weaker moves.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Mold Breaker",
+    "description": "Moves can be used regardless of abilities.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Anger Point",
+    "description": "Maxes Attack after taking a critical hit.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Rattled",
+    "description": "Raises Speed when hit by a Bug-, Ghost-, or Dark-type move.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Moxie",
+    "description": "Boosts Attack after knocking out a Pokémon.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Shell Armor",
+    "description": "Blocks critical hits.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Hydration",
+    "description": "Heals status conditions in rain.",
+    "attack_bonus": 0,
+    "defense_bonus": 5
+  },
+  {
+    "name": "Quick Feet",
+    "description": "Boosts Speed if there is a status problem.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Reckless",
+    "description": "Powers up moves that have recoil damage.",
+    "attack_bonus": 10,
+    "defense_bonus": -5
+  },
+  {
+    "name": "Trace",
+    "description": "Copies an opposing Pokémon's ability.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Download",
+    "description": "Adjusts power according to the foe's stats.",
+    "attack_bonus": 5,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Unnerve",
+    "description": "Prevents opposing Pokémon from eating Berries.",
+    "attack_bonus": 0,
+    "defense_bonus": 0
+  },
+  {
+    "name": "Multiscale",
+    "description": "Reduces damage when HP is full.",
+    "attack_bonus": 0,
+    "defense_bonus": 10
+  },
+  {
+    "name": "Adaptability",
+    "description": "Powers up moves of the same type as the Pokémon.",
+    "attack_bonus": 10,
+    "defense_bonus": 0
+  }
+]
