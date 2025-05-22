@@ -1,11 +1,118 @@
 {
   "inventory": [],
-  "pokedex": [],
-  "active_pokemon": [],
+  "pokedex": [
+    1,
+    43,
+    52,
+    120,
+    27,
+    100,
+    25,
+    109
+  ],
+  "active_pokemon": [
+    {
+      "id": 1,
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "cp": 318,
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "rarity": "Common",
+      "special_abilities": [
+        "Overgrow",
+        "Chlorophyll"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Oddish",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "cp": 265,
+      "hp": 45,
+      "attack": 50,
+      "defense": 55,
+      "rarity": "Common",
+      "special_abilities": [
+        "Chlorophyll",
+        "Effect Spore"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Meowth",
+      "type": [
+        "Normal"
+      ],
+      "cp": 290,
+      "hp": 40,
+      "attack": 45,
+      "defense": 40,
+      "rarity": "Common",
+      "special_abilities": [
+        "Pickup",
+        "Technician"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Voltorb",
+      "type": [
+        "Electric"
+      ],
+      "cp": 325,
+      "hp": 40,
+      "attack": 30,
+      "defense": 50,
+      "rarity": "Common",
+      "special_abilities": [
+        "Static",
+        "Soundproof"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type": [
+        "Electric"
+      ],
+      "cp": 320,
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "rarity": "Common",
+      "special_abilities": [
+        "Static",
+        "Lightning Rod"
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Koffing",
+      "type": [
+        "Poison"
+      ],
+      "cp": 340,
+      "hp": 40,
+      "attack": 65,
+      "defense": 95,
+      "rarity": "Common",
+      "special_abilities": [
+        "Levitate"
+      ]
+    }
+  ],
   "badges": [],
   "coin": 100,
-  "gender": "Woman",
+  "gender": "Transgender Woman",
   "pronouns": "they/them",
-  "nickname": "echo",
-  "power": 0
+  "nickname": "Echo",
+  "power": 309
 }

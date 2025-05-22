@@ -1,5 +1,16 @@
 {
   "guild_id": 1234351991313006622,
   "created": true,
-  "settings": {}
+  "settings": {},
+  "channels": {
+    "general": 1374906277695717427,
+    "wild": 1374906278736035850,
+    "battle": 1374906279847399504
+  },
+  "active_spawn": {
+    "id": 85,
+    "spawn_time": 1747878327,
+    "status": "escaped",
+    "trainer": "Echo"
+  }
 }

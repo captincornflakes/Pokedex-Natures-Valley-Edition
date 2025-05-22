@@ -3,9 +3,11 @@ from discord.ext import commands
 import os
 import tracemalloc
 import logging
+import json
 from utils.github_utils import load_github
 from utils.database_utils import setup_database_connection
 from utils.config_utils import load_config
+from utils.wild_utils import wild_pokemon_spawn_clock
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -13,6 +15,14 @@ logging.basicConfig(level=logging.INFO, handlers=[handler])
 
 config = load_config()
 load_github(config)
+
+# Load pokemon.json and abilities.json into bot attributes
+def load_json_data(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+POKEMON_JSON_PATH = os.path.join("datastores", "pokemon.json")
+ABILITIES_JSON_PATH = os.path.join("datastores", "abilities.json")
 
 # Define the intents for the bot
 intents = discord.Intents.default()
@@ -28,6 +38,12 @@ application_id = int(config.get('application_id', 0))
 bot = commands.AutoShardedBot(command_prefix=PREFIX, intents=intents, application_id=application_id, help_command=None)
 bot.config = config
 bot.db_connection = setup_database_connection(config)
+bot.media = "https://echodebates.com/bot_media/pokemon/"
+
+# Load Pokémon and abilities data into bot attributes
+bot.pokemon = load_json_data(POKEMON_JSON_PATH)
+bot.abilities = load_json_data(ABILITIES_JSON_PATH)
+bot.spawnrate = 60
 
 # Start memory tracking
 tracemalloc.start()
@@ -56,6 +72,8 @@ async def on_ready():
 
     for shard_id, latency in bot.latencies:
         print(f"Shard ID: {shard_id} | Latency: {latency*1000:.2f}ms")
+    
+    bot.loop.create_task(wild_pokemon_spawn_clock(bot))
 
 @bot.event
 async def on_guild_join(guild):
@@ -65,6 +83,7 @@ async def on_guild_join(guild):
 async def setup_hook():
     await load_extensions_from_folder('functions')
     await bot.tree.sync()
+    bot.loop.create_task(wild_pokemon_spawn_clock(bot))  # Start the wild Pokémon clock after setup
 
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook

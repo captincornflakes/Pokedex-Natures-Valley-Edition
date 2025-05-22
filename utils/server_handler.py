@@ -1,5 +1,6 @@
 import os
 import json
+import discord
 
 # Store server data in the 'servers' folder at the project root
 SERVERS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "servers")
@@ -63,3 +64,37 @@ def delete_server_data(guild_id):
         print(f"[Output] Deleted data.json for guild {guild_id}")
     else:
         print(f"[Output] No data.json to delete for guild {guild_id}")
+
+async def generate_pokemon_channels(guild):
+    setup_server_savedata(guild.id)
+    data = read_server_data(guild.id) or {}
+
+    # Check if already created
+    if "channels" in data and all(k in data["channels"] for k in ["general", "wild", "battle", "showcase", "log"]):
+        print(f"[Output] Pokémon channels already exist for guild {guild.id}")
+        return data["channels"]
+
+    # Create category
+    category = discord.utils.get(guild.categories, name="pokemon")
+    if not category:
+        category = await guild.create_category("pokemon")
+        print(f"[Output] Created category 'pokemon' in guild {guild.id}")
+
+    # Create channels
+    channel_names = ["general", "wild", "battle", "showcase", "log"]
+    channel_ids = {}
+    for name in channel_names:
+        channel = discord.utils.get(category.channels, name=name)
+        if not channel:
+            channel = await guild.create_text_channel(name, category=category)
+            print(f"[Output] Created channel '{name}' in category 'pokemon' for guild {guild.id}")
+        channel_ids[name] = channel.id
+
+    # Save to data.json
+    data["channels"] = {
+        "category": category.id,
+        **channel_ids
+    }
+    update_server_data(guild.id, data)
+    print(f"[Output] Saved Pokémon channel IDs to data.json for guild {guild.id}")
+    return data["channels"]
