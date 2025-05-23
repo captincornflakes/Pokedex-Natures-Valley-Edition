@@ -8,7 +8,8 @@
     "attack": 49,
     "defense": 49,
     "rarity": "Common",
-    "special_abilities": ["Overgrow", "Chlorophyll"]
+    "special_abilities": ["Overgrow", "Chlorophyll"],
+    "lore": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger."
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "attack": 62,
     "defense": 63,
     "rarity": "Uncommon",
-    "special_abilities": ["Overgrow", "Chlorophyll"]
+    "special_abilities": ["Overgrow", "Chlorophyll"],
+    "lore": "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "attack": 82,
     "defense": 83,
     "rarity": "Rare",
-    "special_abilities": ["Overgrow", "Chlorophyll"]
+    "special_abilities": ["Overgrow", "Chlorophyll"],
+    "lore": "Venusaur's flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people."
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "attack": 52,
     "defense": 43,
     "rarity": "Common",
-    "special_abilities": ["Blaze", "Solar Power"]
+    "special_abilities": ["Blaze", "Solar Power"],
+    "lore": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself."
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "attack": 64,
     "defense": 58,
     "rarity": "Uncommon",
-    "special_abilities": ["Blaze", "Solar Power"]
+    "special_abilities": ["Blaze", "Solar Power"],
+    "lore": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive."
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "attack": 84,
     "defense": 78,
     "rarity": "Rare",
-    "special_abilities": ["Blaze", "Solar Power"]
+    "special_abilities": ["Blaze", "Solar Power"],
+    "lore": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything."
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "attack": 48,
     "defense": 65,
     "rarity": "Common",
-    "special_abilities": ["Torrent", "Rain Dish"]
+    "special_abilities": ["Torrent", "Rain Dish"],
+    "lore": "When it retracts its long neck into its shell, it squirts out water with vigorous force."
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "attack": 63,
     "defense": 80,
     "rarity": "Uncommon",
-    "special_abilities": ["Torrent", "Rain Dish"]
+    "special_abilities": ["Torrent", "Rain Dish"],
+    "lore": "It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old."
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "attack": 83,
     "defense": 100,
     "rarity": "Rare",
-    "special_abilities": ["Torrent", "Rain Dish"]
+    "special_abilities": ["Torrent", "Rain Dish"],
+    "lore": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet."
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "attack": 30,
     "defense": 35,
     "rarity": "Common",
-    "special_abilities": ["Shield Dust", "Run Away"]
+    "special_abilities": ["Shield Dust", "Run Away"],
+    "lore": "For protection, it releases a horrible stench from the antenna on its head to drive away enemies."
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "attack": 20,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Shed Skin"]
+    "special_abilities": ["Shed Skin"],
+    "lore": "Its shell is as hard as an iron slab. A Metapod does not move very much because it is preparing its soft innards for evolution inside the shell."
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "attack": 45,
     "defense": 50,
     "rarity": "Uncommon",
-    "special_abilities": ["Compound Eyes", "Tinted Lens"]
+    "special_abilities": ["Compound Eyes", "Tinted Lens"],
+    "lore": "Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest."
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "attack": 35,
     "defense": 30,
     "rarity": "Common",
-    "special_abilities": ["Shield Dust", "Run Away"]
+    "special_abilities": ["Shield Dust", "Run Away"],
+    "lore": "Weedle has an extremely acute sense of smell. It distinguishes its favorite kinds of leaves from those it dislikes by sniffing with its big red nose."
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "attack": 25,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Shed Skin"]
+    "special_abilities": ["Shed Skin"],
+    "lore": "Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution."
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "attack": 90,
     "defense": 40,
     "rarity": "Uncommon",
-    "special_abilities": ["Swarm", "Sniper"]
+    "special_abilities": ["Swarm", "Sniper"],
+    "lore": "Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm."
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "attack": 45,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Keen Eye", "Tangled Feet"]
+    "special_abilities": ["Keen Eye", "Tangled Feet"],
+    "lore": "Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings."
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "attack": 60,
     "defense": 55,
     "rarity": "Uncommon",
-    "special_abilities": ["Keen Eye", "Tangled Feet"]
+    "special_abilities": ["Keen Eye", "Tangled Feet"],
+    "lore": "Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws."
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "attack": 80,
     "defense": 75,
     "rarity": "Rare",
-    "special_abilities": ["Keen Eye", "Tangled Feet"]
+    "special_abilities": ["Keen Eye", "Tangled Feet"],
+    "lore": "This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons."
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "attack": 56,
     "defense": 35,
     "rarity": "Common",
-    "special_abilities": ["Run Away", "Guts"]
+    "special_abilities": ["Run Away", "Guts"],
+    "lore": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around."
   },
   {
     "id": 20,
@@ -217,7 +236,8 @@
     "attack": 81,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Run Away", "Guts"]
+    "special_abilities": ["Run Away", "Guts"],
+    "lore": "Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey."
   },
   {
     "id": 21,
@@ -228,7 +248,8 @@
     "attack": 60,
     "defense": 30,
     "rarity": "Common",
-    "special_abilities": ["Keen Eye", "Sniper"]
+    "special_abilities": ["Keen Eye", "Sniper"],
+    "lore": "Spearow has a very loud cry that can be heard over half a mile away. If its high, keening cry is heard echoing all around, it is a sign that they are warning each other of danger."
   },
   {
     "id": 22,
@@ -239,7 +260,8 @@
     "attack": 90,
     "defense": 65,
     "rarity": "Uncommon",
-    "special_abilities": ["Keen Eye", "Sniper"]
+    "special_abilities": ["Keen Eye", "Sniper"],
+    "lore": "Fearow is recognized by its long neck and elongated beak. They are conveniently shaped for catching prey in soil or water."
   },
   {
     "id": 23,
@@ -250,7 +272,8 @@
     "attack": 60,
     "defense": 44,
     "rarity": "Common",
-    "special_abilities": ["Intimidate", "Shed Skin"]
+    "special_abilities": ["Intimidate", "Shed Skin"],
+    "lore": "Ekans curls itself up in a spiral while it rests. Assuming this position allows it to quickly respond to a threat from any direction with a headbutt or bite."
   },
   {
     "id": 24,
@@ -261,7 +284,8 @@
     "attack": 95,
     "defense": 69,
     "rarity": "Uncommon",
-    "special_abilities": ["Intimidate", "Shed Skin"]
+    "special_abilities": ["Intimidate", "Shed Skin"],
+    "lore": "Arbok is capable of crushing opponents by coiling its body around them and squeezing. Its mighty body can snap a steel drum like a toy."
   },
   {
     "id": 25,
@@ -272,7 +296,8 @@
     "attack": 55,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Static", "Lightning Rod"]
+    "special_abilities": ["Static", "Lightning Rod"],
+    "lore": "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge."
   },
   {
     "id": 26,
@@ -283,7 +308,8 @@
     "attack": 90,
     "defense": 55,
     "rarity": "Uncommon",
-    "special_abilities": ["Static", "Lightning Rod"]
+    "special_abilities": ["Static", "Lightning Rod"],
+    "lore": "If the electrical sacs become excessively charged, Raichu plants its tail in the ground and discharges. Scorched patches of ground will be found near this Pokémon's nest."
   },
   {
     "id": 27,
@@ -294,7 +320,8 @@
     "attack": 75,
     "defense": 85,
     "rarity": "Common",
-    "special_abilities": ["Sand Veil", "Sand Rush"]
+    "special_abilities": ["Sand Veil", "Sand Rush"],
+    "lore": "Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies."
   },
   {
     "id": 28,
@@ -305,7 +332,8 @@
     "attack": 100,
     "defense": 110,
     "rarity": "Uncommon",
-    "special_abilities": ["Sand Veil", "Sand Rush"]
+    "special_abilities": ["Sand Veil", "Sand Rush"],
+    "lore": "Sandslash can roll up its body as if it were a ball covered with large spikes. Its hide is extremely hard."
   },
   {
     "id": 29,
@@ -316,7 +344,8 @@
     "attack": 47,
     "defense": 52,
     "rarity": "Common",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "Nidoran♀ has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokémon."
   },
   {
     "id": 30,
@@ -327,7 +356,8 @@
     "attack": 62,
     "defense": 67,
     "rarity": "Uncommon",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other."
   },
   {
     "id": 31,
@@ -338,7 +368,8 @@
     "attack": 92,
     "defense": 87,
     "rarity": "Rare",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "Nidoqueen's body is encased in extremely hard scales. It is adept at sending foes flying with harsh tackles."
   },
   {
     "id": 32,
@@ -349,7 +380,8 @@
     "attack": 47,
     "defense": 52,
     "rarity": "Common",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "Nidoran♂ has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction."
   },
   {
     "id": 33,
@@ -360,7 +392,8 @@
     "attack": 62,
     "defense": 67,
     "rarity": "Uncommon",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "Nidorino's horn contains venom. If they are angered, the potency of their venom increases."
   },
   {
     "id": 34,
@@ -371,7 +404,8 @@
     "attack": 102,
     "defense": 77,
     "rarity": "Rare",
-    "special_abilities": ["Poison Point", "Rivalry"]
+    "special_abilities": ["Poison Point", "Rivalry"],
+    "lore": "Nidoking's thick tail packs enormously destructive power. With one swing, it can topple a metal transmission tower."
   },
   {
     "id": 35,
@@ -382,7 +416,8 @@
     "attack": 45,
     "defense": 48,
     "rarity": "Common",
-    "special_abilities": ["Cute Charm", "Magic Guard"]
+    "special_abilities": ["Cute Charm", "Magic Guard"],
+    "lore": "Clefairy are said to be rarely seen by people and are thought to be drawn by the full moon to dance at night."
   },
   {
     "id": 36,
@@ -393,7 +428,8 @@
     "attack": 70,
     "defense": 73,
     "rarity": "Uncommon",
-    "special_abilities": ["Cute Charm", "Magic Guard"]
+    "special_abilities": ["Cute Charm", "Magic Guard"],
+    "lore": "Clefable moves by skipping lightly as if it were flying using its wings. Its bouncy step lets it even walk on water."
   },
   {
     "id": 37,
@@ -404,7 +440,8 @@
     "attack": 41,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Flash Fire", "Drought"]
+    "special_abilities": ["Flash Fire", "Drought"],
+    "lore": "At the time of birth, it has just one tail. The tail splits from its tip as it grows older."
   },
   {
     "id": 38,
@@ -415,7 +452,8 @@
     "attack": 76,
     "defense": 75,
     "rarity": "Uncommon",
-    "special_abilities": ["Flash Fire", "Drought"]
+    "special_abilities": ["Flash Fire", "Drought"],
+    "lore": "Ninetales is said to live for a thousand years. Each of its tails is loaded with supernatural powers."
   },
   {
     "id": 39,
@@ -426,7 +464,8 @@
     "attack": 45,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Cute Charm", "Competitive"]
+    "special_abilities": ["Cute Charm", "Competitive"],
+    "lore": "Jigglypuff's vocal cords can freely adjust the wavelength of its voice. This Pokémon uses this ability to sing at precisely the right wavelength to make its foes most drowsy."
   },
   {
     "id": 40,
@@ -437,7 +476,8 @@
     "attack": 70,
     "defense": 75,
     "rarity": "Uncommon",
-    "special_abilities": ["Cute Charm", "Competitive"]
+    "special_abilities": ["Cute Charm", "Competitive"],
+    "lore": "Wigglytuff has a body that is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size."
   },
   {
     "id": 41,
@@ -448,7 +488,8 @@
     "attack": 45,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Inner Focus", "Infiltrator"]
+    "special_abilities": ["Inner Focus", "Infiltrator"],
+    "lore": "Zubat remains quietly unmoving in a dark spot during the bright daylight hours. It does so because prolonged exposure to the sun causes its body to become slightly burned."
   },
   {
     "id": 42,
@@ -459,7 +500,8 @@
     "attack": 80,
     "defense": 75,
     "rarity": "Uncommon",
-    "special_abilities": ["Inner Focus", "Infiltrator"]
+    "special_abilities": ["Inner Focus", "Infiltrator"],
+    "lore": "Golbat loves to drink the blood of living things. It is particularly active in the pitch black of night."
   },
   {
     "id": 43,
@@ -470,7 +512,8 @@
     "attack": 50,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Oddish searches for fertile, nutrient-rich soil, then plants itself. During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds."
   },
   {
     "id": 44,
@@ -481,7 +524,8 @@
     "attack": 65,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Gloom releases a foul fragrance from the pistil of its flower. When faced with danger, the stench worsens."
   },
   {
     "id": 45,
@@ -492,7 +536,8 @@
     "attack": 80,
     "defense": 85,
     "rarity": "Rare",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Vileplume's toxic pollen triggers atrocious allergy attacks. It is said to scatter its pollen with every step it takes."
   },
   {
     "id": 46,
@@ -503,7 +548,8 @@
     "attack": 70,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Effect Spore", "Damp"]
+    "special_abilities": ["Effect Spore", "Damp"],
+    "lore": "Paras has parasitic mushrooms growing on its back called tochukaso. They grow large by drawing nutrients from this Bug Pokémon host."
   },
   {
     "id": 47,
@@ -514,7 +560,8 @@
     "attack": 95,
     "defense": 80,
     "rarity": "Uncommon",
-    "special_abilities": ["Effect Spore", "Damp"]
+    "special_abilities": ["Effect Spore", "Damp"],
+    "lore": "Parasect is known to infest large trees en masse and drain nutrients from the lower trunk and roots. When an infested tree dies, they move onto another."
   },
   {
     "id": 48,
@@ -525,7 +572,8 @@
     "attack": 55,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Compound Eyes", "Tinted Lens"]
+    "special_abilities": ["Compound Eyes", "Tinted Lens"],
+    "lore": "Venonat is said to be attracted by light at night. It is often seen near bright lights."
   },
   {
     "id": 49,
@@ -536,7 +584,8 @@
     "attack": 65,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Compound Eyes", "Tinted Lens"]
+    "special_abilities": ["Compound Eyes", "Tinted Lens"],
+    "lore": "Venomoth is nocturnal—it is a Pokémon that only becomes active at night. Its wings are covered in scales that scatter a highly toxic dust."
   },
   {
     "id": 50,
@@ -547,7 +596,8 @@
     "attack": 55,
     "defense": 25,
     "rarity": "Common",
-    "special_abilities": ["Sand Veil", "Sand Rush"]
+    "special_abilities": ["Sand Veil", "Sand Rush"],
+    "lore": "Diglett are raised in most farms. The reason is simple—wherever they burrow, the soil is left perfectly tilled for growing delicious crops."
   },
   {
     "id": 51,
@@ -558,7 +608,8 @@
     "attack": 80,
     "defense": 50,
     "rarity": "Uncommon",
-    "special_abilities": ["Sand Veil", "Sand Rush"]
+    "special_abilities": ["Sand Veil", "Sand Rush"],
+    "lore": "Dugtrio are actually triplets that emerged from one body. As a result, each triplet thinks exactly like the other two."
   },
   {
     "id": 52,
@@ -569,7 +620,8 @@
     "attack": 45,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Pickup", "Technician"]
+    "special_abilities": ["Pickup", "Technician"],
+    "lore": "Meowth withdraws its sharp claws into its paws to silently sneak about. For some reason, this Pokémon loves shiny coins that glitter with light."
   },
   {
     "id": 53,
@@ -580,7 +632,8 @@
     "attack": 70,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Pickup", "Technician"]
+    "special_abilities": ["Pickup", "Technician"],
+    "lore": "Persian has a violent temperament. It will scratch anyone, even its Trainer, with its sharp claws if displeased."
   },
   {
     "id": 54,
@@ -591,7 +644,8 @@
     "attack": 52,
     "defense": 48,
     "rarity": "Common",
-    "special_abilities": ["Damp", "Cloud Nine"]
+    "special_abilities": ["Damp", "Cloud Nine"],
+    "lore": "Psyduck is constantly beset by headaches. If the headache intensifies, it starts using mysterious powers."
   },
   {
     "id": 55,
@@ -602,7 +656,8 @@
     "attack": 82,
     "defense": 78,
     "rarity": "Uncommon",
-    "special_abilities": ["Damp", "Cloud Nine"]
+    "special_abilities": ["Damp", "Cloud Nine"],
+    "lore": "Golduck is often seen swimming elegantly by lakeshores. It is often mistaken for the Japanese monster, Kappa, due to its webbed hands and feet."
   },
   {
     "id": 56,
@@ -613,7 +668,8 @@
     "attack": 80,
     "defense": 35,
     "rarity": "Common",
-    "special_abilities": ["Vital Spirit", "Defiant"]
+    "special_abilities": ["Vital Spirit", "Defiant"],
+    "lore": "Mankey can become furious if even simply stared at. Once angry, it will chase anyone relentlessly."
   },
   {
     "id": 57,
@@ -624,7 +680,8 @@
     "attack": 105,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Vital Spirit", "Defiant"]
+    "special_abilities": ["Vital Spirit", "Defiant"],
+    "lore": "When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger."
   },
   {
     "id": 58,
@@ -635,7 +692,8 @@
     "attack": 70,
     "defense": 45,
     "rarity": "Common",
-    "special_abilities": ["Intimidate", "Flash Fire"]
+    "special_abilities": ["Intimidate", "Flash Fire"],
+    "lore": "Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what."
   },
   {
     "id": 59,
@@ -646,7 +704,8 @@
     "attack": 110,
     "defense": 80,
     "rarity": "Uncommon",
-    "special_abilities": ["Intimidate", "Flash Fire"]
+    "special_abilities": ["Intimidate", "Flash Fire"],
+    "lore": "Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night."
   },
   {
     "id": 60,
@@ -657,7 +716,8 @@
     "attack": 50,
     "defense": 40,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Water Absorb"]
+    "special_abilities": ["Swift Swim", "Water Absorb"],
+    "lore": "Poliwag's thin and damp skin is easily seen through. The spiral on its belly is actually its internal organs showing through."
   },
   {
     "id": 61,
@@ -668,7 +728,8 @@
     "attack": 65,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Swift Swim", "Water Absorb"]
+    "special_abilities": ["Swift Swim", "Water Absorb"],
+    "lore": "The surface of Poliwhirl's body is always wet and slick with an oily fluid. Because of this greasy covering, it can easily slip and slide out of the clutches of any enemy in battle."
   },
   {
     "id": 62,
@@ -679,7 +740,8 @@
     "attack": 95,
     "defense": 70,
     "rarity": "Rare",
-    "special_abilities": ["Swift Swim", "Water Absorb"]
+    "special_abilities": ["Swift Swim", "Water Absorb"],
+    "lore": "Poliwrath's highly developed muscles never grow fatigued, however much it exercises. This Pokémon can swim back and forth across the Pacific Ocean without effort."
   },
   {
     "id": 63,
@@ -690,7 +752,8 @@
     "attack": 20,
     "defense": 15,
     "rarity": "Common",
-    "special_abilities": ["Synchronize", "Inner Focus"]
+    "special_abilities": ["Synchronize", "Inner Focus"],
+    "lore": "Abra sleeps for eighteen hours a day. However, it can sense the presence of foes even while it is sleeping, and will teleport itself to safety."
   },
   {
     "id": 64,
@@ -701,7 +764,8 @@
     "attack": 35,
     "defense": 30,
     "rarity": "Uncommon",
-    "special_abilities": ["Synchronize", "Inner Focus"]
+    "special_abilities": ["Synchronize", "Inner Focus"],
+    "lore": "Kadabra emits a peculiar alpha wave if it develops a headache. Only those people with a strong psyche can hope to become a Trainer of this Pokémon."
   },
   {
     "id": 65,
@@ -712,7 +776,8 @@
     "attack": 50,
     "defense": 45,
     "rarity": "Rare",
-    "special_abilities": ["Synchronize", "Inner Focus"]
+    "special_abilities": ["Synchronize", "Inner Focus"],
+    "lore": "Alakazam's brain continually grows, making its head far too heavy to support with its neck. This Pokémon holds its head up using its psychic powers instead."
   },
   {
     "id": 66,
@@ -723,7 +788,8 @@
     "attack": 80,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Guts", "No Guard"]
+    "special_abilities": ["Guts", "No Guard"],
+    "lore": "Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans."
   },
   {
     "id": 67,
@@ -734,7 +800,8 @@
     "attack": 100,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Guts", "No Guard"]
+    "special_abilities": ["Guts", "No Guard"],
+    "lore": "Machoke's thoroughly toned muscles possess the hardness of steel. It is known as the Pokémon that can lift a dump truck with one hand."
   },
   {
     "id": 68,
@@ -745,7 +812,8 @@
     "attack": 130,
     "defense": 80,
     "rarity": "Rare",
-    "special_abilities": ["Guts", "No Guard"]
+    "special_abilities": ["Guts", "No Guard"],
+    "lore": "Machamp has the power to hurl anything aside. However, because it is so strong, it must wear a power-save belt to be able to regulate its motions."
   },
   {
     "id": 69,
@@ -756,7 +824,8 @@
     "attack": 75,
     "defense": 35,
     "rarity": "Common",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Bellsprout's thin, flexible body lets it bend and sway to avoid any attack, however strong it may be."
   },
   {
     "id": 70,
@@ -767,7 +836,8 @@
     "attack": 90,
     "defense": 50,
     "rarity": "Uncommon",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Weepinbell has a large hook on its rear. At night, it hooks on to a tree branch and goes to sleep. If it moves while sleeping, it may wake up to find itself on the ground."
   },
   {
     "id": 71,
@@ -778,7 +848,8 @@
     "attack": 105,
     "defense": 65,
     "rarity": "Rare",
-    "special_abilities": ["Chlorophyll", "Effect Spore"]
+    "special_abilities": ["Chlorophyll", "Effect Spore"],
+    "lore": "Victreebel's mouth is wide enough to swallow a whole adult. It attracts prey with a sweet aroma."
   },
   {
     "id": 72,
@@ -789,7 +860,8 @@
     "attack": 40,
     "defense": 35,
     "rarity": "Common",
-    "special_abilities": ["Clear Body", "Liquid Ooze"]
+    "special_abilities": ["Clear Body", "Liquid Ooze"],
+    "lore": "Tentacool's body is largely composed of water. If it is removed from the sea, it dries up like parchment. If this Pokémon happens to become dehydrated, put it back into the sea."
   },
   {
     "id": 73,
@@ -800,7 +872,8 @@
     "attack": 70,
     "defense": 65,
     "rarity": "Uncommon",
-    "special_abilities": ["Clear Body", "Liquid Ooze"]
+    "special_abilities": ["Clear Body", "Liquid Ooze"],
+    "lore": "Tentacruel has eighty tentacles that can stretch and contract freely. They wrap around prey and weaken it with poison."
   },
   {
     "id": 74,
@@ -811,7 +884,8 @@
     "attack": 80,
     "defense": 100,
     "rarity": "Common",
-    "special_abilities": ["Rock Head", "Sturdy"]
+    "special_abilities": ["Rock Head", "Sturdy"],
+    "lore": "Geodude climbs mountain paths using only the power of its arms. Because they look just like boulders, careless hikers may step on them."
   },
   {
     "id": 75,
@@ -822,7 +896,8 @@
     "attack": 95,
     "defense": 115,
     "rarity": "Uncommon",
-    "special_abilities": ["Rock Head", "Sturdy"]
+    "special_abilities": ["Rock Head", "Sturdy"],
+    "lore": "Graveler grows by feeding on rocks. Apparently, it prefers to eat rocks that are covered in moss."
   },
   {
     "id": 76,
@@ -833,7 +908,8 @@
     "attack": 110,
     "defense": 130,
     "rarity": "Rare",
-    "special_abilities": ["Rock Head", "Sturdy"]
+    "special_abilities": ["Rock Head", "Sturdy"],
+    "lore": "Golem is known for rolling down mountain paths at high speed. It is so hard, even dynamite can't scratch its body."
   },
   {
     "id": 77,
@@ -844,7 +920,8 @@
     "attack": 85,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Run Away", "Flame Body"]
+    "special_abilities": ["Run Away", "Flame Body"],
+    "lore": "Ponyta is a weak runner immediately after birth. It gradually becomes faster by chasing after its parents."
   },
   {
     "id": 78,
@@ -855,7 +932,8 @@
     "attack": 100,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Run Away", "Flame Body"]
+    "special_abilities": ["Run Away", "Flame Body"],
+    "lore": "Rapidash usually can be seen casually galloping in the fields and plains. However, when this Pokémon turns serious, its fiery mane flares and races as fast as 150 mph."
   },
   {
     "id": 79,
@@ -866,7 +944,8 @@
     "attack": 65,
     "defense": 65,
     "rarity": "Common",
-    "special_abilities": ["Oblivious", "Own Tempo"]
+    "special_abilities": ["Oblivious", "Own Tempo"],
+    "lore": "Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge."
   },
   {
     "id": 80,
@@ -877,7 +956,8 @@
     "attack": 75,
     "defense": 110,
     "rarity": "Uncommon",
-    "special_abilities": ["Oblivious", "Own Tempo"]
+    "special_abilities": ["Oblivious", "Own Tempo"],
+    "lore": "Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This forces it to reluctantly swim and catch prey."
   },
   {
     "id": 81,
@@ -888,7 +968,8 @@
     "attack": 35,
     "defense": 70,
     "rarity": "Common",
-    "special_abilities": ["Magnet Pull", "Sturdy"]
+    "special_abilities": ["Magnet Pull", "Sturdy"],
+    "lore": "Magnemite attaches itself to power lines to feed on electricity. If your house has a power outage, check your circuit breakers—there may be a Magnemite loose."
   },
   {
     "id": 82,
@@ -899,7 +980,8 @@
     "attack": 60,
     "defense": 95,
     "rarity": "Uncommon",
-    "special_abilities": ["Magnet Pull", "Sturdy"]
+    "special_abilities": ["Magnet Pull", "Sturdy"],
+    "lore": "Magneton emits a powerful magnetic force that is fatal to mechanical devices. As a result, large cities sound sirens to warn citizens of large-scale outbreaks of this Pokémon."
   },
   {
     "id": 83,
@@ -910,7 +992,8 @@
     "attack": 65,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Keen Eye", "Inner Focus"]
+    "special_abilities": ["Keen Eye", "Inner Focus"],
+    "lore": "Farfetch'd is always seen with a stalk from a plant. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight over stalks."
   },
   {
     "id": 84,
@@ -921,7 +1004,8 @@
     "attack": 85,
     "defense": 30,
     "rarity": "Common",
-    "special_abilities": ["Keen Eye", "Early Bird"]
+    "special_abilities": ["Keen Eye", "Early Bird"],
+    "lore": "Doduo's two heads never sleep at the same time. Its two heads take turns sleeping so one can always keep watch for enemies."
   },
   {
     "id": 85,
@@ -932,7 +1016,8 @@
     "attack": 110,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Keen Eye", "Early Bird"]
+    "special_abilities": ["Keen Eye", "Early Bird"],
+    "lore": "Dodrio's three heads represent joy, sadness, and anger. It runs at nearly 40 mph when at full speed."
   },
   {
     "id": 86,
@@ -943,7 +1028,8 @@
     "attack": 45,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Thick Fat", "Ice Body"]
+    "special_abilities": ["Thick Fat", "Ice Body"],
+    "lore": "Seel's entire body is covered in a pure white, smooth, and velvety coat. This Pokémon loves frigid, ice-covered seas."
   },
   {
     "id": 87,
@@ -954,7 +1040,8 @@
     "attack": 70,
     "defense": 80,
     "rarity": "Uncommon",
-    "special_abilities": ["Thick Fat", "Ice Body"]
+    "special_abilities": ["Thick Fat", "Ice Body"],
+    "lore": "Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago."
   },
   {
     "id": 88,
@@ -965,7 +1052,8 @@
     "attack": 95,
     "defense": 75,
     "rarity": "Common",
-    "special_abilities": ["Stench", "Liquid Ooze"]
+    "special_abilities": ["Stench", "Liquid Ooze"],
+    "lore": "Grimer's sludgy and rubbery body can be forced through any opening, however small it may be. This Pokémon enters sewer pipes to drink filthy wastewater."
   },
   {
     "id": 89,
@@ -976,7 +1064,8 @@
     "attack": 130,
     "defense": 100,
     "rarity": "Uncommon",
-    "special_abilities": ["Stench", "Liquid Ooze"]
+    "special_abilities": ["Stench", "Liquid Ooze"],
+    "lore": "Muk's body contains toxic elements, and it will readily leak a foul-smelling, poisonous fluid from all over its body."
   },
   {
     "id": 90,
@@ -987,7 +1076,8 @@
     "attack": 65,
     "defense": 100,
     "rarity": "Common",
-    "special_abilities": ["Shell Armor", "Rain Dish"]
+    "special_abilities": ["Shell Armor", "Rain Dish"],
+    "lore": "Shellder's hard shell repels any kind of attack. It is vulnerable only when its shell is open."
   },
   {
     "id": 91,
@@ -998,7 +1088,8 @@
     "attack": 95,
     "defense": 180,
     "rarity": "Uncommon",
-    "special_abilities": ["Shell Armor", "Rain Dish"]
+    "special_abilities": ["Shell Armor", "Rain Dish"],
+    "lore": "Cloyster's shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking."
   },
   {
     "id": 92,
@@ -1009,7 +1100,8 @@
     "attack": 35,
     "defense": 30,
     "rarity": "Common",
-    "special_abilities": ["Levitate"]
+    "special_abilities": ["Levitate"],
+    "lore": "Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away."
   },
   {
     "id": 93,
@@ -1020,7 +1112,8 @@
     "attack": 50,
     "defense": 45,
     "rarity": "Uncommon",
-    "special_abilities": ["Levitate"]
+    "special_abilities": ["Levitate"],
+    "lore": "Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away."
   },
   {
     "id": 94,
@@ -1031,7 +1124,8 @@
     "attack": 65,
     "defense": 60,
     "rarity": "Rare",
-    "special_abilities": ["Levitate"]
+    "special_abilities": ["Levitate"],
+    "lore": "Gengar is said to emerge from darkness to steal the lives of those who become lost in mountains."
   },
   {
     "id": 95,
@@ -1042,7 +1136,8 @@
     "attack": 45,
     "defense": 160,
     "rarity": "Common",
-    "special_abilities": ["Rock Head", "Sturdy"]
+    "special_abilities": ["Rock Head", "Sturdy"],
+    "lore": "Onix tunnels underground at over 50 miles per hour. As it grows, the stone portions of its body harden to become similar to a diamond, but colored black."
   },
   {
     "id": 96,
@@ -1053,7 +1148,8 @@
     "attack": 48,
     "defense": 45,
     "rarity": "Common",
-    "special_abilities": ["Insomnia", "Forewarn"]
+    "special_abilities": ["Insomnia", "Forewarn"],
+    "lore": "Drowzee puts enemies to sleep, then eats their dreams. Occasionally, it gets sick from eating only bad dreams."
   },
   {
     "id": 97,
@@ -1064,7 +1160,8 @@
     "attack": 73,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Insomnia", "Forewarn"]
+    "special_abilities": ["Insomnia", "Forewarn"],
+    "lore": "Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis while this Pokémon gleefully eats their dreams."
   },
   {
     "id": 98,
@@ -1075,7 +1172,8 @@
     "attack": 105,
     "defense": 90,
     "rarity": "Common",
-    "special_abilities": ["Hyper Cutter", "Shell Armor"]
+    "special_abilities": ["Hyper Cutter", "Shell Armor"],
+    "lore": "Krabby's pincers are not only powerful weapons, they are used for balance when walking sideways."
   },
   {
     "id": 99,
@@ -1086,7 +1184,8 @@
     "attack": 130,
     "defense": 115,
     "rarity": "Uncommon",
-    "special_abilities": ["Hyper Cutter", "Shell Armor"]
+    "special_abilities": ["Hyper Cutter", "Shell Armor"],
+    "lore": "Kingler's large and hard pincer has 10,000-horsepower strength. However, being so heavy, it is difficult to aim."
   },
   {
     "id": 100,
@@ -1097,7 +1196,8 @@
     "attack": 30,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Static", "Soundproof"]
+    "special_abilities": ["Static", "Soundproof"],
+    "lore": "Voltorb was first sighted at a company that manufactures Poké Balls. The link between that sighting and the fact that this Pokémon looks very similar to a Poké Ball remains a mystery."
   },
   {
     "id": 101,
@@ -1614,7 +1714,8 @@
     "attack": 64,
     "defense": 45,
     "rarity": "Common",
-    "special_abilities": ["Shed Skin"]
+    "special_abilities": ["Shed Skin"],
+    "lore": "Dratini is called the 'Mirage Pokémon' because so few have seen it. It is said to shed its skin as it grows, often hiding deep in rivers."
   },
   {
     "id": 148,
@@ -1625,7 +1726,8 @@
     "attack": 84,
     "defense": 65,
     "rarity": "Uncommon",
-    "special_abilities": ["Shed Skin"]
+    "special_abilities": ["Shed Skin"],
+    "lore": "Dragonair stores an enormous amount of energy inside its body. It is said to alter the weather around it by discharging energy from the crystals on its neck and tail."
   },
   {
     "id": 149,
@@ -1636,7 +1738,8 @@
     "attack": 134,
     "defense": 95,
     "rarity": "Rare",
-    "special_abilities": ["Inner Focus", "Multiscale"]
+    "special_abilities": ["Inner Focus", "Multiscale"],
+    "lore": "Dragonite is capable of circling the globe in just sixteen hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land."
   },
   {
     "id": 150,
@@ -1647,9 +1750,10 @@
     "attack": 110,
     "defense": 90,
     "rarity": "Legendary",
-    "special_abilities": ["Pressure", "Unnerve"]
+    "special_abilities": ["Pressure", "Unnerve"],
+    "lore": "Mewtwo was created by recombining Mew's genes. It's said to have the most savage heart among Pokémon, and it is highly intelligent and powerful."
   },
-    {
+  {
     "id": 151,
     "name": "Mew",
     "type": ["Psychic"],
@@ -1658,6 +1762,7 @@
     "attack": 100,
     "defense": 100,
     "rarity": "Mythical",
-    "special_abilities": ["Synchronize"]
+    "special_abilities": ["Synchronize"],
+    "lore": "Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people."
   }
 ]

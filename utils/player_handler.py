@@ -90,7 +90,7 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
     pokemon_obj = next((p for p in bot.pokemon if p.get("id") == pokemon_id), None)
     if not pokemon_obj:
         print(f"[Output] Pokémon ID {pokemon_id} not found in bot.pokemon.")
-        return False
+        return "not_found"
 
     # Add to Pokédex if not already present
     if pokemon_id not in user_data["pokedex"]:
@@ -100,11 +100,7 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
     # Check if Pokémon already exists in active team
     if any(p.get("id") == pokemon_id for p in user_data["active_pokemon"]):
         print(f"[Output] Pokémon ID {pokemon_id} already in user {user_id}'s active team. Not adding duplicate.")
-        if interaction:
-            await interaction.response.send_message(
-                f"You already have {pokemon_obj.get('name', pokemon_obj.get('id'))} in your active team!", ephemeral=True
-            )
-        return False
+        return "duplicate"
 
     # If less than 6 active Pokémon, add directly
     if len(user_data["active_pokemon"]) < 6:
@@ -112,13 +108,13 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
         update_user_power(user_data)
         update_user_record(guild_id, user_id, user_data)
         print(f"[Output] Added Pokémon {pokemon_obj.get('name', pokemon_obj.get('id'))} to user {user_id}'s active team.")
-        return True
+        return "success"
 
     # If 6, prompt for replacement if interaction is provided
     if interaction is not None:
         class ReplacePokemonView(discord.ui.View):
             def __init__(self, active_pokemon):
-                super().__init__(timeout=60)
+                super().__init__(timeout=180)
                 for idx, poke in enumerate(active_pokemon):
                     label = poke.get("name", str(poke.get("id", "?")))
                     self.add_item(discord.ui.Button(label=f"{idx+1}: {label}", style=discord.ButtonStyle.primary, custom_id=str(idx)))
@@ -145,7 +141,7 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
         try:
             button_interaction = await bot.wait_for("interaction", check=check, timeout=60)
             if button_interaction.data["custom_id"] == "cancel":
-                return False
+                return "cancel"
             idx = int(button_interaction.data["custom_id"])
             removed = user_data["active_pokemon"].pop(idx)
             # Prevent adding duplicate after replacement
@@ -155,7 +151,7 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
                 )
                 # Put the removed Pokémon back
                 user_data["active_pokemon"].insert(idx, removed)
-                return False
+                return "duplicate"
             user_data["active_pokemon"].append(pokemon_obj)
             update_user_power(user_data)
             update_user_record(guild_id, user_id, user_data)
@@ -164,14 +160,14 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
                 ephemeral=True
             )
             print(f"[Output] Replaced Pokémon for user {user_id}: {removed.get('name', removed.get('id'))} -> {pokemon_obj.get('name', pokemon_obj.get('id'))}")
-            return True
+            return "success"
         except Exception as e:
             print(f"[ERROR] Replacement selection failed: {e}")
             await interaction.followup.send("No selection made. Pokémon not added.", ephemeral=True)
-            return False
+            return "timeout"
     else:
         print(f"[Output] User {user_id} already has 6 active Pokémon. No interaction provided for replacement.")
-        return False
+        return "full"
 
 def update_user_power(user_data):
     """
