@@ -1208,7 +1208,8 @@
     "attack": 50,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Static", "Soundproof"]
+    "special_abilities": ["Static", "Soundproof"],
+    "lore": "Electrode eats electricity in the atmosphere. On days when lightning strikes, you can see this Pokémon exploding all over the place from eating too much electricity."
   },
   {
     "id": 102,
@@ -1219,7 +1220,8 @@
     "attack": 40,
     "defense": 80,
     "rarity": "Common",
-    "special_abilities": ["Chlorophyll", "Harvest"]
+    "special_abilities": ["Chlorophyll", "Harvest"],
+    "lore": "Exeggcute consists of six eggs that form a closely knit cluster. The eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution."
   },
   {
     "id": 103,
@@ -1230,7 +1232,8 @@
     "attack": 60,
     "defense": 85,
     "rarity": "Uncommon",
-    "special_abilities": ["Chlorophyll", "Harvest"]
+    "special_abilities": ["Chlorophyll", "Harvest"],
+    "lore": "Exeggutor is known as 'The Walking Jungle.' Each of the nuts has a face and will grow into an Exeggcute if it falls off."
   },
   {
     "id": 104,
@@ -1241,7 +1244,8 @@
     "attack": 60,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Rock Head", "Lightning Rod"]
+    "special_abilities": ["Rock Head", "Lightning Rod"],
+    "lore": "Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull it wears are from its tears."
   },
   {
     "id": 105,
@@ -1252,7 +1256,8 @@
     "attack": 80,
     "defense": 70,
     "rarity": "Uncommon",
-    "special_abilities": ["Rock Head", "Lightning Rod"]
+    "special_abilities": ["Rock Head", "Lightning Rod"],
+    "lore": "Marowak overcame its sadness at the loss of its mother and grew tough. Its tempered and hardened spirit is not easily broken."
   },
   {
     "id": 106,
@@ -1263,7 +1268,8 @@
     "attack": 120,
     "defense": 70,
     "rarity": "Rare",
-    "special_abilities": ["Limber", "Reckless"]
+    "special_abilities": ["Limber", "Reckless"],
+    "lore": "Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs to relax the muscles."
   },
   {
     "id": 107,
@@ -1274,7 +1280,8 @@
     "attack": 105,
     "defense": 79,
     "rarity": "Rare",
-    "special_abilities": ["Inner Focus", "Iron Fist"]
+    "special_abilities": ["Inner Focus", "Iron Fist"],
+    "lore": "Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. Its punches slice through the air at incredible speeds."
   },
   {
     "id": 108,
@@ -1285,7 +1292,8 @@
     "attack": 55,
     "defense": 75,
     "rarity": "Common",
-    "special_abilities": ["Oblivious", "Cloud Nine"]
+    "special_abilities": ["Oblivious", "Cloud Nine"],
+    "lore": "Lickitung's tongue is twice the length of its body. It can be moved like an arm for grabbing food and attacking."
   },
   {
     "id": 109,
@@ -1296,7 +1304,8 @@
     "attack": 65,
     "defense": 95,
     "rarity": "Common",
-    "special_abilities": ["Levitate"]
+    "special_abilities": ["Levitate"],
+    "lore": "Koffing embodies toxic substances. It mixes the toxins with raw garbage to set off a chemical reaction that results in a terribly powerful poison gas."
   },
   {
     "id": 110,
@@ -1307,7 +1316,8 @@
     "attack": 90,
     "defense": 120,
     "rarity": "Uncommon",
-    "special_abilities": ["Levitate"]
+    "special_abilities": ["Levitate"],
+    "lore": "Weezing loves the gases given off by rotted kitchen garbage. It can often be found in garbage dumps searching for food."
   },
   {
     "id": 111,
@@ -1318,7 +1328,8 @@
     "attack": 85,
     "defense": 95,
     "rarity": "Common",
-    "special_abilities": ["Lightning Rod", "Rock Head"]
+    "special_abilities": ["Lightning Rod", "Rock Head"],
+    "lore": "Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel."
   },
   {
     "id": 112,
@@ -1329,7 +1340,8 @@
     "attack": 130,
     "defense": 120,
     "rarity": "Uncommon",
-    "special_abilities": ["Lightning Rod", "Rock Head"]
+    "special_abilities": ["Lightning Rod", "Rock Head"],
+    "lore": "Rhydon's horn can bore through solid rock. Its tail can topple a building with a single whack."
   },
   {
     "id": 113,
@@ -1340,7 +1352,8 @@
     "attack": 5,
     "defense": 5,
     "rarity": "Rare",
-    "special_abilities": ["Natural Cure", "Serene Grace"]
+    "special_abilities": ["Natural Cure", "Serene Grace"],
+    "lore": "Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite."
   },
   {
     "id": 114,
@@ -1351,7 +1364,8 @@
     "attack": 55,
     "defense": 70,
     "rarity": "Common",
-    "special_abilities": ["Chlorophyll", "Leaf Guard"]
+    "special_abilities": ["Chlorophyll", "Leaf Guard"],
+    "lore": "Tangela's body is covered by blue vines. No one has ever seen the face hidden behind this growth of vines."
   },
   {
     "id": 115,
@@ -1362,7 +1376,8 @@
     "attack": 95,
     "defense": 80,
     "rarity": "Uncommon",
-    "special_abilities": ["Early Bird", "Scrappy"]
+    "special_abilities": ["Early Bird", "Scrappy"],
+    "lore": "Kangaskhan's baby is protected by its mother's pouch. The mother will risk its life to protect its young."
   },
   {
     "id": 116,
@@ -1373,7 +1388,8 @@
     "attack": 40,
     "defense": 70,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Sniper"]
+    "special_abilities": ["Swift Swim", "Sniper"],
+    "lore": "Horsea eats small insects and moss off of rocks. If it senses danger, it sprays ink into the water to escape."
   },
   {
     "id": 117,
@@ -1384,7 +1400,8 @@
     "attack": 65,
     "defense": 95,
     "rarity": "Uncommon",
-    "special_abilities": ["Swift Swim", "Sniper"]
+    "special_abilities": ["Swift Swim", "Sniper"],
+    "lore": "Seadra's body bristles with sharp spines. The spines secrete poison, and its fins and tail are highly developed for swimming."
   },
   {
     "id": 118,
@@ -1395,7 +1412,8 @@
     "attack": 67,
     "defense": 60,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Water Veil"]
+    "special_abilities": ["Swift Swim", "Water Veil"],
+    "lore": "Goldeen's tail fin billows like an elegant ballroom dress, giving it the nickname of the Water Queen."
   },
   {
     "id": 119,
@@ -1406,7 +1424,8 @@
     "attack": 92,
     "defense": 65,
     "rarity": "Uncommon",
-    "special_abilities": ["Swift Swim", "Water Veil"]
+    "special_abilities": ["Swift Swim", "Water Veil"],
+    "lore": "Seaking is very protective of its eggs. The male will make a nest by carving out boulders in a stream using its horn."
   },
   {
     "id": 120,
@@ -1417,7 +1436,8 @@
     "attack": 45,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Illuminate", "Natural Cure"]
+    "special_abilities": ["Illuminate", "Natural Cure"],
+    "lore": "Staryu's center section, called the core, glows brightly in the night sky. It is said to communicate with the stars."
   },
   {
     "id": 121,
@@ -1428,7 +1448,8 @@
     "attack": 75,
     "defense": 85,
     "rarity": "Uncommon",
-    "special_abilities": ["Illuminate", "Natural Cure"]
+    "special_abilities": ["Illuminate", "Natural Cure"],
+    "lore": "Starmie emits radio signals into the night sky. The core of this Pokémon shines in seven colors, a rainbow."
   },
   {
     "id": 122,
@@ -1439,7 +1460,8 @@
     "attack": 45,
     "defense": 65,
     "rarity": "Rare",
-    "special_abilities": ["Filter", "Technician"]
+    "special_abilities": ["Filter", "Technician"],
+    "lore": "Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists."
   },
   {
     "id": 123,
@@ -1450,7 +1472,8 @@
     "attack": 110,
     "defense": 80,
     "rarity": "Rare",
-    "special_abilities": ["Swarm", "Technician"]
+    "special_abilities": ["Swarm", "Technician"],
+    "lore": "Scyther's sharp scythes are so effective, they can slice through thick logs in one wicked stroke."
   },
   {
     "id": 124,
@@ -1461,7 +1484,8 @@
     "attack": 50,
     "defense": 35,
     "rarity": "Uncommon",
-    "special_abilities": ["Oblivious", "Forewarn"]
+    "special_abilities": ["Oblivious", "Forewarn"],
+    "lore": "Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so captivating that people seeing it are compelled to shake their hips without noticing."
   },
   {
     "id": 125,
@@ -1472,7 +1496,8 @@
     "attack": 83,
     "defense": 57,
     "rarity": "Common",
-    "special_abilities": ["Static", "Motor Drive"]
+    "special_abilities": ["Static", "Motor Drive"],
+    "lore": "Electabuzz wind up all sorts of electrical machinery and cause blackouts. They appear in power plants in search of electricity."
   },
   {
     "id": 126,
@@ -1483,7 +1508,8 @@
     "attack": 95,
     "defense": 57,
     "rarity": "Common",
-    "special_abilities": ["Flame Body", "Vital Spirit"]
+    "special_abilities": ["Flame Body", "Vital Spirit"],
+    "lore": "Magmar's body always burns with an orange glow that enables it to hide perfectly among flames."
   },
   {
     "id": 127,
@@ -1494,7 +1520,8 @@
     "attack": 125,
     "defense": 100,
     "rarity": "Rare",
-    "special_abilities": ["Hyper Cutter", "Mold Breaker"]
+    "special_abilities": ["Hyper Cutter", "Mold Breaker"],
+    "lore": "Pinsir grips its prey with its pincers until the prey is torn in half. What it can't tear, it tosses far away."
   },
   {
     "id": 128,
@@ -1505,7 +1532,8 @@
     "attack": 100,
     "defense": 95,
     "rarity": "Uncommon",
-    "special_abilities": ["Intimidate", "Anger Point"]
+    "special_abilities": ["Intimidate", "Anger Point"],
+    "lore": "Tauros charges while whipping its hefty body with its tails. Once it starts charging, it stops for nothing."
   },
   {
     "id": 129,
@@ -1516,7 +1544,8 @@
     "attack": 10,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Rattled"]
+    "special_abilities": ["Swift Swim", "Rattled"],
+    "lore": "Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it."
   },
   {
     "id": 130,
@@ -1527,7 +1556,8 @@
     "attack": 125,
     "defense": 79,
     "rarity": "Rare",
-    "special_abilities": ["Intimidate", "Moxie"]
+    "special_abilities": ["Intimidate", "Moxie"],
+    "lore": "Gyarados is an extremely vicious and violent Pokémon. When humans begin to fight, it will appear and burn everything to the ground with intensely hot flames."
   },
   {
     "id": 131,
@@ -1538,7 +1568,8 @@
     "attack": 85,
     "defense": 80,
     "rarity": "Rare",
-    "special_abilities": ["Water Absorb", "Shell Armor"]
+    "special_abilities": ["Water Absorb", "Shell Armor"],
+    "lore": "Lapras is a gentle soul that can ferry people across the sea on its back. It loves to sing and its beautiful voice can be heard from afar."
   },
   {
     "id": 132,
@@ -1549,7 +1580,8 @@
     "attack": 48,
     "defense": 48,
     "rarity": "Common",
-    "special_abilities": ["Limber"]
+    "special_abilities": ["Limber"],
+    "lore": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on memory, this Pokémon manages to get details wrong."
   },
   {
     "id": 133,
@@ -1560,7 +1592,8 @@
     "attack": 40,
     "defense": 50,
     "rarity": "Common",
-    "special_abilities": ["Run Away", "Adaptability"]
+    "special_abilities": ["Run Away", "Adaptability"],
+    "lore": "Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve."
   },
   {
     "id": 134,
@@ -1571,7 +1604,8 @@
     "attack": 65,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Water Absorb", "Hydration"]
+    "special_abilities": ["Water Absorb", "Hydration"],
+    "lore": "Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to control water."
   },
   {
     "id": 135,
@@ -1582,7 +1616,8 @@
     "attack": 110,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Volt Absorb", "Quick Feet"]
+    "special_abilities": ["Volt Absorb", "Quick Feet"],
+    "lore": "Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts."
   },
   {
     "id": 136,
@@ -1593,7 +1628,8 @@
     "attack": 130,
     "defense": 60,
     "rarity": "Uncommon",
-    "special_abilities": ["Flash Fire", "Reckless"]
+    "special_abilities": ["Flash Fire", "Reckless"],
+    "lore": "Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot."
   },
   {
     "id": 137,
@@ -1604,7 +1640,8 @@
     "attack": 60,
     "defense": 55,
     "rarity": "Common",
-    "special_abilities": ["Trace", "Download"]
+    "special_abilities": ["Trace", "Download"],
+    "lore": "Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy-protected, so it cannot be duplicated."
   },
   {
     "id": 138,
@@ -1615,7 +1652,8 @@
     "attack": 40,
     "defense": 100,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Shell Armor"]
+    "special_abilities": ["Swift Swim", "Shell Armor"],
+    "lore": "Omanyte is one of the ancient and long-since extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws into its hard shell."
   },
   {
     "id": 139,
@@ -1626,7 +1664,8 @@
     "attack": 60,
     "defense": 125,
     "rarity": "Uncommon",
-    "special_abilities": ["Swift Swim", "Shell Armor"]
+    "special_abilities": ["Swift Swim", "Shell Armor"],
+    "lore": "Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, making its movements slow."
   },
   {
     "id": 140,
@@ -1637,7 +1676,8 @@
     "attack": 80,
     "defense": 90,
     "rarity": "Common",
-    "special_abilities": ["Swift Swim", "Battle Armor"]
+    "special_abilities": ["Swift Swim", "Battle Armor"],
+    "lore": "Kabuto is a Pokémon that has been regenerated from a fossil. However, in rare cases, living examples have been discovered. This Pokémon has not changed at all for 300 million years."
   },
   {
     "id": 141,
@@ -1648,7 +1688,8 @@
     "attack": 115,
     "defense": 100,
     "rarity": "Uncommon",
-    "special_abilities": ["Swift Swim", "Battle Armor"]
+    "special_abilities": ["Swift Swim", "Battle Armor"],
+    "lore": "Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land."
   },
   {
     "id": 142,
@@ -1659,7 +1700,8 @@
     "attack": 105,
     "defense": 65,
     "rarity": "Rare",
-    "special_abilities": ["Rock Head", "Pressure"]
+    "special_abilities": ["Rock Head", "Pressure"],
+    "lore": "Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from DNA extracted from amber. It is imagined to have been the king of the skies in ancient times."
   },
   {
     "id": 143,
@@ -1670,7 +1712,8 @@
     "attack": 110,
     "defense": 65,
     "rarity": "Rare",
-    "special_abilities": ["Immunity", "Thick Fat"]
+    "special_abilities": ["Immunity", "Thick Fat"],
+    "lore": "Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its big belly as a place to play."
   },
   {
     "id": 144,
@@ -1681,7 +1724,8 @@
     "attack": 85,
     "defense": 100,
     "rarity": "Legendary",
-    "special_abilities": ["Pressure", "Keen Eye"]
+    "special_abilities": ["Pressure", "Keen Eye"],
+    "lore": "Articuno is said to appear to doomed people who are lost in icy mountains. This Pokémon's beautiful wings are made of ice."
   },
   {
     "id": 145,
@@ -1692,7 +1736,8 @@
     "attack": 90,
     "defense": 85,
     "rarity": "Legendary",
-    "special_abilities": ["Pressure", "Static"]
+    "special_abilities": ["Pressure", "Static"],
+    "lore": "Zapdos is a legendary bird Pokémon that is said to appear from clouds while dropping enormous lightning bolts."
   },
   {
     "id": 146,
@@ -1703,7 +1748,8 @@
     "attack": 100,
     "defense": 90,
     "rarity": "Legendary",
-    "special_abilities": ["Pressure", "Flame Body"]
+    "special_abilities": ["Pressure", "Flame Body"],
+    "lore": "Moltres is a legendary bird Pokémon that can control fire. If injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself."
   },
   {
     "id": 147,

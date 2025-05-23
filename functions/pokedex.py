@@ -46,8 +46,11 @@ class Pokedex(commands.Cog):
                 name = p.get("name", "?")
                 poke_type = ", ".join(p.get("type", []))
                 rarity = p.get("rarity", "?")
+                lore = p.get("lore", "")
                 name_display = f"**{name}**"
                 line = f"#{poke_id} {name_display} [{poke_type}, {rarity}]"
+                if lore:
+                    line += f"\n    *{lore}*"
             else:
                 line = f"#{poke_id} ? ? ? ? ?"
             lines.append(line)
@@ -58,7 +61,6 @@ class Pokedex(commands.Cog):
         try:
             await interaction.response.send_message(
                 f"**Your Pokédex Progress (Page {page}/{max_page}):**\n"
-                "Pokémon you have caught are shown in **bold**.\n"
                 f"{pokedex_str}",
                 ephemeral=True
             )
