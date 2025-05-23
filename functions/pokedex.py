@@ -24,7 +24,7 @@ class Pokedex(commands.Cog):
         pokemon_data = self.pokemon
         print(f"[DEBUG] Loaded {len(pokemon_data)} Pokémon from self.pokemon.")
 
-        per_page = 50
+        per_page = 20  # Limit to 25 per page
         total_pokemon = len(pokemon_data)
         max_page = (total_pokemon + per_page - 1) // per_page
         print(f"[DEBUG] Total Pokémon: {total_pokemon}, Pages: {max_page}")
@@ -50,26 +50,105 @@ class Pokedex(commands.Cog):
                 name_display = f"**{name}**"
                 line = f"#{poke_id} {name_display} [{poke_type}, {rarity}]"
                 if lore:
-                    line += f"\n    *{lore}*"
+                    line += f"\n*{lore}*"
             else:
                 line = f"#{poke_id} ? ? ? ? ?"
             lines.append(line)
 
-        pokedex_str = "\n".join(lines)
+        pokedex_str = "\n\n".join(lines)
+        header = f"**Your Pokédex Progress (Page {page}/{max_page}):**"
 
-        print("[DEBUG] Sending pokedex to user.")
+        # Discord embed field value limit is 1024, description limit is 4096
+        if len(pokedex_str) > 4000:
+            pokedex_str = pokedex_str[:4000] + "\n... (truncated)"
+
+        embed = discord.Embed(
+            title=f"Pokédex Progress (Page {page}/{max_page})",
+            description=pokedex_str,
+            color=discord.Color.green()
+        )
+        embed.set_footer(text=f"Showing {start+1}-{min(end, total_pokemon)} of {total_pokemon} Pokémon")
+
+        print("[DEBUG] Sending pokedex to user (embed).")
         try:
-            await interaction.response.send_message(
-                f"**Your Pokédex Progress (Page {page}/{max_page}):**\n"
-                f"{pokedex_str}",
-                ephemeral=True
-            )
+            await interaction.response.send_message(embed=embed, ephemeral=True)
         except Exception as e:
-            print(f"[ERROR] Failed to send pokedex: {e}")
-            await interaction.followup.send(
-                "Pokédex could not be displayed. Try a higher page number or contact the bot owner.",
-                ephemeral=True
+            print(f"[ERROR] Failed to send pokedex as embed: {e}")
+            # Fallback to plain text
+            try:
+                await interaction.followup.send(
+                    f"{header}\n{pokedex_str}",
+                    ephemeral=True
+                )
+            except Exception as e2:
+                print(f"[ERROR] Failed to send pokedex as text: {e2}")
+
+    @app_commands.command(name="pokedex_summary", description="Show your Pokédex summary and profile.")
+    async def pokedex_summary(self, interaction: discord.Interaction):
+        print(f"[DEBUG] /pokedex_summary called by user {interaction.user.id} in guild {interaction.guild.id}")
+        user_data = read_user_record(interaction.guild.id, interaction.user.id)
+        if not user_data:
+            await interaction.response.send_message("You need to set up your profile first with `/join`.", ephemeral=True)
+            return
+
+        pokedex_ids = set(user_data.get("pokedex", []))
+        total_discovered = len(pokedex_ids)
+        total_pokemon = len(self.pokemon)
+
+        # Profile fields
+        profile_name = user_data.get("nickname") or interaction.user.display_name
+        coin = user_data.get("coin", 0)
+        gender = user_data.get("gender", "Not set")
+        pronouns = user_data.get("pronouns", "Not set")
+        power = user_data.get("power", 0)
+        badges = user_data.get("badges", [])
+        inventory = user_data.get("inventory", [])
+        active_pokemon = user_data.get("active_pokemon", [])
+
+        embed = discord.Embed(
+            title=f"{profile_name}'s Pokédex Summary",
+            color=discord.Color.blue()
+        )
+        embed.add_field(name="Pokémon Discovered", value=f"{total_discovered} / {total_pokemon}", inline=False)
+        embed.add_field(name="Coin", value=f"${coin}", inline=True)
+        embed.add_field(name="Power", value=str(power), inline=True)
+        embed.add_field(name="Gender", value=gender, inline=True)
+        embed.add_field(name="Pronouns", value=pronouns, inline=True)
+
+        # Inventory
+        if inventory:
+            inventory_str = ", ".join(str(item) for item in inventory)
+        else:
+            inventory_str = "None"
+        embed.add_field(name="Inventory", value=inventory_str, inline=False)
+
+        # Badges
+        if badges:
+            badges_str = ", ".join(str(badge) for badge in badges)
+        else:
+            badges_str = "None"
+        embed.add_field(name="Badges", value=badges_str, inline=False)
+
+        # Active Pokémon
+        if active_pokemon:
+            active_lines = []
+            for poke in active_pokemon:
+                poke_name = poke.get("name", "?")
+                poke_type = ", ".join(poke.get("type", []))
+                poke_cp = poke.get("cp", "?")
+                poke_hp = poke.get("hp", "?")
+                active_lines.append(f"**{poke_name}** [{poke_type}] (CP: {poke_cp}, HP: {poke_hp})")
+            embed.add_field(
+                name="Active Pokémon",
+                value="\n".join(active_lines),
+                inline=False
             )
+        else:
+            embed.add_field(name="Active Pokémon", value="None", inline=False)
+
+        embed.set_footer(text="Use /pokedex to view your full Pokédex.")
+
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(Pokedex(bot))

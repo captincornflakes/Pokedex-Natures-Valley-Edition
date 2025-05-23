@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Boulder Badge",
+    "meaning": "Awarded for defeating the Pewter City Gym. Symbolizes strength and determination."
+  },
+  {
+    "name": "Cascade Badge",
+    "meaning": "Awarded for defeating the Cerulean City Gym. Symbolizes mastery of Water-type Pokémon."
+  },
+  {
+    "name": "Thunder Badge",
+    "meaning": "Awarded for defeating the Vermilion City Gym. Symbolizes mastery of Electric-type Pokémon."
+  },
+  {
+    "name": "Rainbow Badge",
+    "meaning": "Awarded for defeating the Celadon City Gym. Symbolizes harmony with nature and Grass-type Pokémon."
+  },
+  {
+    "name": "Soul Badge",
+    "meaning": "Awarded for defeating the Fuchsia City Gym. Symbolizes discipline and mastery of Poison-type Pokémon."
+  },
+  {
+    "name": "Marsh Badge",
+    "meaning": "Awarded for defeating the Saffron City Gym. Symbolizes psychic power and mental strength."
+  },
+  {
+    "name": "Volcano Badge",
+    "meaning": "Awarded for defeating the Cinnabar Island Gym. Symbolizes fiery passion and mastery of Fire-type Pokémon."
+  },
+  {
+    "name": "Earth Badge",
+    "meaning": "Awarded for defeating the Viridian City Gym. Symbolizes mastery of Ground-type Pokémon and completion of the Gym challenge."
+  },
+  {
+    "name": "Community Helper",
+    "meaning": "Awarded for helping other trainers in the Discord server."
+  },
+  {
+    "name": "Event Champion",
+    "meaning": "Awarded for winning a special Discord event or tournament."
+  },
+  {
+    "name": "Early Supporter",
+    "meaning": "Awarded to trainers who joined the Discord server in its first month."
+  },
+  {
+    "name": "Bug Catcher",
+    "meaning": "Awarded for reporting a bug that helped improve the bot or server."
+  },
+  {
+    "name": "Server Booster",
+    "meaning": "Awarded for boosting the Discord server."
+  },
+  {
+    "name": "Pokédex Master",
+    "meaning": "Awarded for completing the Pokédex on this Discord server."
+  },
+  {
+    "name": "Top Trader",
+    "meaning": "Awarded for making 10 successful trades with other trainers."
+  },
+  {
+    "name": "Contest Star",
+    "meaning": "Awarded for participating in 5 or more community contests."
+  },
+  {
+    "name": "Friendly Rival",
+    "meaning": "Awarded for battling with friends 20 times."
+  },
+  {
+    "name": "Welcome Wagon",
+    "meaning": "Awarded for greeting and welcoming 10 new trainers to the server."
+  },
+  {
+    "name": "Trivia Ace",
+    "meaning": "Awarded for winning a server Pokémon trivia game."
+  },
+  {
+    "name": "Artisan",
+    "meaning": "Awarded for sharing Pokémon-themed art or creative work in the community."
+  },
+  {
+    "name": "Streamer Supporter",
+    "meaning": "Awarded for supporting or promoting a community stream or event."
+  },
+  {
+    "name": "Kind Heart",
+    "meaning": "Awarded for acts of kindness or generosity in the community."
+  }
+]
