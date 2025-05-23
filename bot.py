@@ -21,8 +21,6 @@ def load_json_data(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-POKEMON_JSON_PATH = os.path.join("datastores", "pokemon.json")
-ABILITIES_JSON_PATH = os.path.join("datastores", "abilities.json")
 
 # Define the intents for the bot
 intents = discord.Intents.default()
@@ -40,9 +38,13 @@ bot.config = config
 bot.db_connection = setup_database_connection(config)
 bot.media = "https://echodebates.com/bot_media/pokemon/"
 
+POKEMON_JSON_PATH = os.path.join("datastores", "pokemon.json")
+ABILITIES_JSON_PATH = os.path.join("datastores", "abilities.json")
+BADGES_JSON_PATH = os.path.join("datastores", "badges.json")
 # Load Pokémon and abilities data into bot attributes
 bot.pokemon = load_json_data(POKEMON_JSON_PATH)
 bot.abilities = load_json_data(ABILITIES_JSON_PATH)
+bot.badges = load_json_data(BADGES_JSON_PATH)
 bot.spawnrate = 60
 
 # Start memory tracking
