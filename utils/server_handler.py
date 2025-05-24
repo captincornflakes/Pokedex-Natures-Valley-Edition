@@ -70,7 +70,7 @@ async def generate_pokemon_channels(guild):
     data = read_server_data(guild.id) or {}
 
     # Check if already created
-    if "channels" in data and all(k in data["channels"] for k in ["general", "wild", "battle", "showcase", "log"]):
+    if "channels" in data and all(k in data["channels"] for k in ["general", "wild"]):
         print(f"[Output] Pokémon channels already exist for guild {guild.id}")
         return data["channels"]
 
@@ -81,7 +81,7 @@ async def generate_pokemon_channels(guild):
         print(f"[Output] Created category 'pokemon' in guild {guild.id}")
 
     # Create channels
-    channel_names = ["general", "wild", "battle", "showcase", "log"]
+    channel_names = ["general", "wild"]
     channel_ids = {}
     for name in channel_names:
         channel = discord.utils.get(category.channels, name=name)

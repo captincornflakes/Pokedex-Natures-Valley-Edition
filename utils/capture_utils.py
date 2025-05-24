@@ -3,14 +3,17 @@ import json
 import discord
 import random
 from utils.player_handler import add_pokemon_to_player, read_user_record
-from utils.spawn_utils import update_active_spawn_status
+from utils.spawn_utils import update_active_spawn_status, update_wild_pokemon_message
 
 def calculate_capture_success(player_power, pokemon_cp):
     if player_power <= 0 or pokemon_cp <= 0:
+        print(f"[CAPTURE] Invalid values: player_power={player_power}, pokemon_cp={pokemon_cp} -> False")
         return False
     success_chance = min(0.95, max(0.05, player_power / (player_power + pokemon_cp)))
     roll = random.random()
-    return roll < success_chance
+    result = roll < success_chance
+    print(f"[CAPTURE] player_power={player_power}, pokemon_cp={pokemon_cp}, success_chance={success_chance:.2f}, roll={roll:.2f} -> {result}")
+    return result
 
 class CaptureButton(discord.ui.View):
     def __init__(self, guild_id, pokemon_id):
@@ -58,6 +61,12 @@ class CaptureButton(discord.ui.View):
         success = calculate_capture_success(player_power, pokemon_cp)
         if success:
             update_active_spawn_status(guild_id, pokemon_id, "captured", trainer_name)
+            # Update the wild Pokémon message to show it was caught
+            await update_wild_pokemon_message(
+                bot,
+                guild_id,
+                status_message=f"🎉 {trainer_name} successfully captured {pokemon_obj.get('name', 'the Pokémon')}!"
+            )
             result = await add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction)
             if result == "duplicate":
                 await interaction.response.edit_message(

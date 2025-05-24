@@ -8,6 +8,7 @@ from utils.github_utils import load_github
 from utils.database_utils import setup_database_connection
 from utils.config_utils import load_config
 from utils.wild_utils import wild_pokemon_spawn_clock
+from utils.battle_channel_utils import monitor_all_battle_channels_clock
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -85,7 +86,8 @@ async def on_guild_join(guild):
 async def setup_hook():
     await load_extensions_from_folder('functions')
     await bot.tree.sync()
-    bot.loop.create_task(wild_pokemon_spawn_clock(bot))  # Start the wild Pokémon clock after setup
+    bot.loop.create_task(wild_pokemon_spawn_clock(bot))
+    bot.loop.create_task(monitor_all_battle_channels_clock(bot))  # Start monitoring all battle channels
 
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook

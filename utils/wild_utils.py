@@ -5,7 +5,7 @@ import discord
 import asyncio
 import time
 from utils.capture_utils import CaptureButton
-from utils.spawn_utils import generate_wild_pokemon
+from utils.spawn_utils import generate_wild_pokemon, update_wild_pokemon_message
 
 async def spawn_wild_pokemon_in_all_servers(bot):
     servers_dir = os.path.join(os.getcwd(), "servers")
@@ -18,11 +18,31 @@ async def spawn_wild_pokemon_in_all_servers(bot):
             continue
         with open(data_file, "r", encoding="utf-8") as f:
             data = json.load(f)
-        # Prevent double spawning: check if an active spawn exists and was spawned less than 30 seconds ago
         active_spawn = data.get("active_spawn")
         now = int(time.time())
-        if active_spawn and (now - active_spawn.get("spawn_time", 0)) < 30:
-            continue  # Skip this server if a wild Pokémon was spawned less than 30 seconds ago
+        # If there is an active spawn, check if the message still has the capture button
+        if active_spawn and active_spawn.get("status") == "active":
+            channels = data.get("channels", {})
+            wild_channel_id = channels.get("wild")
+            if wild_channel_id:
+                channel = bot.get_channel(int(wild_channel_id))
+                if channel and "message_id" in active_spawn:
+                    try:
+                        message = await channel.fetch_message(active_spawn["message_id"])
+                        # If the message still has a view (button), update it to show the Pokémon ran away
+                        if message.components or message.attachments or getattr(message, "view", None):
+                            await update_wild_pokemon_message(
+                                bot,
+                                guild_id,
+                                status_message="The wild Pokémon ran away!",
+                                new_embed=None
+                            )
+                    except Exception as e:
+                        print(f"[WARN] Could not update previous wild Pokémon message for guild {guild_id}: {e}")
+            # Mark the previous spawn as escaped
+            from utils.spawn_utils import update_active_spawn_status
+            update_active_spawn_status(guild_id, active_spawn["id"], "escaped", trainer=None)
+        # Now continue to spawn a new Pokémon as usual
 
         channels = data.get("channels", {})
         wild_channel_id = channels.get("wild")
@@ -35,29 +55,35 @@ async def spawn_wild_pokemon_in_all_servers(bot):
         if not pokemon:
             continue
 
-        # Log the active spawn to the server's data.json
-        log_active_spawn(guild_id, pokemon_id, status="active", trainer=None)
-
         # Build the embed
         name = pokemon.get("name", "Unknown")
         poke_type = ", ".join(pokemon.get("type", []))
         rarity = pokemon.get("rarity", "Unknown")
         abilities = ", ".join(pokemon.get("special_abilities", []))
+        cp = pokemon.get("cp", "?")
         embed = discord.Embed(
             title=f"A wild {name} appeared!",
             color=discord.Color.green()
         )
         embed.add_field(name="Type", value=poke_type or "Unknown", inline=True)
         embed.add_field(name="Rarity", value=rarity, inline=True)
+        embed.add_field(name="CP", value=str(cp), inline=True)
         embed.add_field(name="Abilities", value=abilities or "Unknown", inline=False)
+        # Add Pokémon image using bot.media
+        if hasattr(bot, "media"):
+            poke_id = pokemon.get("id", "unknown")
+            # Example for a CDN that supports resizing via query string:
+            embed.set_image(url=f"{bot.media}/pokemon/{poke_id}.png?width=100&height=100")
 
         # Send to the wild channel with capture button
         channel = bot.get_channel(int(wild_channel_id))
         if channel:
             view = CaptureButton(guild_id, pokemon_id)
-            await channel.send(embed=embed, view=view)
+            message = await channel.send(embed=embed, view=view)
+            # Log the active spawn to the server's data.json, now with message_id
+            log_active_spawn(guild_id, pokemon_id, status="active", trainer=None, message_id=message.id)
 
-def log_active_spawn(guild_id, pokemon_id, status="active", trainer=None):
+def log_active_spawn(guild_id, pokemon_id, status="active", trainer=None, message_id=None):
     servers_dir = os.path.join(os.getcwd(), "servers")
     data_file = os.path.join(servers_dir, str(guild_id), "data.json")
     if not os.path.isfile(data_file):
@@ -71,6 +97,8 @@ def log_active_spawn(guild_id, pokemon_id, status="active", trainer=None):
         "status": status,
         "trainer": trainer
     }
+    if message_id is not None:
+        spawn_entry["message_id"] = message_id
     data["active_spawn"] = spawn_entry
     with open(data_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
@@ -82,4 +110,4 @@ async def wild_pokemon_spawn_clock(bot):
     await bot.wait_until_ready()
     while not bot.is_closed():
         await spawn_wild_pokemon_in_all_servers(bot)
-        await asyncio.sleep(bot.spawnrate)  # Use bot.spawnrate for interval
+        await asyncio.sleep(bot.spawnrate)
