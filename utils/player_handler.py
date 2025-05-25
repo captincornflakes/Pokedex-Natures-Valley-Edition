@@ -116,7 +116,7 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
             def __init__(self, active_pokemon):
                 super().__init__(timeout=180)
                 for idx, poke in enumerate(active_pokemon):
-                    label = poke.get("name", str(poke.get("id", "?")))
+                    label = f"{poke.get('name', str(poke.get('id', '?')))} (CP: {poke.get('cp', '?')})"
                     self.add_item(discord.ui.Button(label=f"{idx+1}: {label}", style=discord.ButtonStyle.primary, custom_id=str(idx)))
 
             @discord.ui.button(label="Cancel", style=discord.ButtonStyle.danger, custom_id="cancel")
@@ -126,7 +126,10 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
 
         # Send prompt to user
         active_pokemon = user_data["active_pokemon"]
-        description = "\n".join([f"{idx+1}: {poke.get('name', poke.get('id'))}" for idx, poke in enumerate(active_pokemon)])
+        description = "\n".join([
+            f"{idx+1}: {poke.get('name', poke.get('id'))} (CP: {poke.get('cp', '?')})"
+            for idx, poke in enumerate(active_pokemon)
+        ])
         embed = discord.Embed(
             title="Active Pokémon Full",
             description=f"You already have 6 active Pokémon:\n{description}\n\nSelect one to replace.",

@@ -83,12 +83,17 @@ class Pokedex(commands.Cog):
             except Exception as e2:
                 print(f"[ERROR] Failed to send pokedex as text: {e2}")
 
-    @app_commands.command(name="pokedex_summary", description="Show your Pokédex summary and profile.")
-    async def pokedex_summary(self, interaction: discord.Interaction):
-        print(f"[DEBUG] /pokedex_summary called by user {interaction.user.id} in guild {interaction.guild.id}")
-        user_data = read_user_record(interaction.guild.id, interaction.user.id)
+    @app_commands.command(name="pokedex_summary", description="Show your or another user's Pokédex summary and profile.")
+    @app_commands.describe(user="The user whose Pokédex summary you want to view (leave blank for yourself)")
+    async def pokedex_summary(self, interaction: discord.Interaction, user: discord.Member = None):
+        target_user = user or interaction.user
+        print(f"[DEBUG] /pokedex_summary called by user {interaction.user.id} in guild {interaction.guild.id} (target: {target_user.id})")
+        user_data = read_user_record(interaction.guild.id, target_user.id)
         if not user_data:
-            await interaction.response.send_message("You need to set up your profile first with `/join`.", ephemeral=True)
+            if user:
+                await interaction.response.send_message(f"{target_user.display_name} has not set up their profile yet.", ephemeral=True)
+            else:
+                await interaction.response.send_message("You need to set up your profile first with `/join`.", ephemeral=True)
             return
 
         pokedex_ids = set(user_data.get("pokedex", []))
@@ -96,7 +101,7 @@ class Pokedex(commands.Cog):
         total_pokemon = len(self.pokemon)
 
         # Profile fields
-        profile_name = user_data.get("nickname") or interaction.user.display_name
+        profile_name = user_data.get("nickname") or target_user.display_name
         coin = user_data.get("coin", 0)
         gender = user_data.get("gender", "Not set")
         pronouns = user_data.get("pronouns", "Not set")

@@ -9,6 +9,7 @@ from utils.database_utils import setup_database_connection
 from utils.config_utils import load_config
 from utils.wild_utils import wild_pokemon_spawn_clock
 from utils.battle_channel_utils import monitor_all_battle_channels_clock
+from utils.battle_commands_utils import on_message_battle_commands
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -42,10 +43,12 @@ bot.media = "https://echodebates.com/bot_media/pokemon/"
 POKEMON_JSON_PATH = os.path.join("datastores", "pokemon.json")
 ABILITIES_JSON_PATH = os.path.join("datastores", "abilities.json")
 BADGES_JSON_PATH = os.path.join("datastores", "badges.json")
+TYPES_JSON_PATH = os.path.join("datastores", "types.json")
 # Load Pokémon and abilities data into bot attributes
 bot.pokemon = load_json_data(POKEMON_JSON_PATH)
 bot.abilities = load_json_data(ABILITIES_JSON_PATH)
 bot.badges = load_json_data(BADGES_JSON_PATH)
+bot.types = load_json_data(TYPES_JSON_PATH)
 bot.spawnrate = 60
 
 # Start memory tracking
@@ -91,6 +94,11 @@ async def setup_hook():
 
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook
+
+@bot.event
+async def on_message(message):
+    await on_message_battle_commands(bot, message)
+    await bot.process_commands(message)
 
 # Run the bot with token
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 import os
 import json
 import discord
+import asyncio
 
 # Store server data in the 'servers' folder at the project root
 SERVERS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "servers")
@@ -35,8 +36,11 @@ def generate_server_data(guild_id):
     default_data = {
         "guild_id": guild_id,
         "created": True,
-        "settings": {}
-    }
+        "settings": {}, 
+        "channels": {},
+        "active_spawn": {},
+        "active_battles": []
+        }
     with open(data_file, "w", encoding="utf-8") as f:
         json.dump(default_data, f, indent=2)
     print(f"[Output] Generated new data.json for guild {guild_id}")
@@ -70,7 +74,7 @@ async def generate_pokemon_channels(guild):
     data = read_server_data(guild.id) or {}
 
     # Check if already created
-    if "channels" in data and all(k in data["channels"] for k in ["general", "wild"]):
+    if "channels" in data and all(k in data["channels"] for k in ["guide", "general", "wild"]):
         print(f"[Output] Pokémon channels already exist for guild {guild.id}")
         return data["channels"]
 
@@ -81,7 +85,7 @@ async def generate_pokemon_channels(guild):
         print(f"[Output] Created category 'pokemon' in guild {guild.id}")
 
     # Create channels
-    channel_names = ["general", "wild"]
+    channel_names = ["guide", "general", "wild"]
     channel_ids = {}
     for name in channel_names:
         channel = discord.utils.get(category.channels, name=name)
@@ -98,3 +102,105 @@ async def generate_pokemon_channels(guild):
     update_server_data(guild.id, data)
     print(f"[Output] Saved Pokémon channel IDs to data.json for guild {guild.id}")
     return data["channels"]
+
+async def send_welcome_embed(channel, image_url=None):
+    print(f"[Debug] Sending welcome embed to channel {channel.id}")
+    welcome_embed = discord.Embed(
+        title="Welcome to the World of Pokémon!",
+        description=(
+            "To get started on your adventure, use `/join` to set up your trainer profile.\n"
+            "Then, use `/starter` to pick your very first Pokémon!\n\n"
+            "Good luck, Trainer!"
+        ),
+        color=discord.Color.green()
+    )
+    if image_url:
+        welcome_embed.set_image(url=image_url)
+    await channel.send(embed=welcome_embed)
+
+async def send_general_guide_embed(channel, image_url=None):
+    print(f"[Debug] Sending general guide embed to channel {channel.id}")
+    guide_embed = discord.Embed(
+        title="Pokédex Bot Guide",
+        description=(
+            "This channel contains helpful information about using the Pokédex bot.\n\n"
+            "**Getting Started:**\n"
+            "• Use `/pokedex` to view your Pokédex.\n"
+            "• Use `/pokedex_summary` to view your Pokédex summary.\n"
+            "• Catch wild Pokémon in the #wild channel!\n\n"
+            "For more commands and help, use `/help`."
+        ),
+        color=discord.Color.gold()
+    )
+    if image_url:
+        guide_embed.set_image(url=image_url)
+    await channel.send(embed=guide_embed)
+
+async def send_battle_guide_embed(channel):
+    print(f"[Debug] Sending battle guide embed to channel {channel.id}")
+    battle_guide_embed = discord.Embed(
+        title="Pokédex Battle Guide",
+        description=(
+            "**How to Battle:**\n"
+            "• Use `/challenge @user` to start a battle with another trainer.\n"
+            "• Use `/endbattle` to end the current battle.\n"
+            "**How to Battle:**\n"
+            "• The following have to be sent in the battle channel.\n"
+            "• When the battle channel opens, use `!choose` to show your Pokémon.\n"
+            "• When the battle channel opens, use `!choose #<slot>` to select your Pokémon.\n"
+            "• Once both trainers have chosen, use `!attack` to take your turn.\n"
+            "• The battle is best of 3 rounds. Each round, the winner is tracked.\n"
+            "• When a Pokémon faints, choose your next one with `!choose`.\n"
+            "• The winner is the trainer who wins the most rounds!\n\n"
+            "**Commands:**\n"
+            "• `!choose` — Pick your Pokémon for the round.\n"
+            "• `!attack` — Attack your opponent on your turn.\n"
+            "• `!forfeit` — Forfeit the battle.\n\n"
+            "Good luck, Trainers!"
+        ),
+        color=discord.Color.blue()
+    )
+    battle_guide_embed.set_thumbnail(url="https://bots.media/pokemon/25.png")
+    await channel.send(embed=battle_guide_embed)
+
+async def setup_guide_channel(guild):
+    setup_server_savedata(guild.id)
+    data = read_server_data(guild.id) or {}
+
+    # Find or create the 'pokemon' category
+    category = discord.utils.get(guild.categories, name="pokemon")
+    if not category:
+        category = await guild.create_category("pokemon")
+        print(f"[Output] Created category 'pokemon' in guild {guild.id}")
+
+    # Find or create the 'guide' channel
+    guide_channel = discord.utils.get(category.channels, name="guide")
+    if not guide_channel:
+        guide_channel = await guild.create_text_channel("guide", category=category)
+        print(f"[Output] Created channel 'guide' in category 'pokemon' for guild {guild.id}")
+
+    # Set permissions: everyone can read, but not send messages
+    overwrite = {
+        guild.default_role: discord.PermissionOverwrite(
+            read_messages=True,
+            send_messages=False,
+            add_reactions=False,
+            send_tts_messages=False,
+            manage_messages=False,
+            embed_links=True,
+            attach_files=False,
+            mention_everyone=False
+        )
+    }
+    await guide_channel.edit(overwrites=overwrite)
+    print(f"[Output] Set 'guide' channel to read-only in guild {guild.id}")
+
+    # Wait 5 seconds before sending embeds (now just a wait, no embeds will be sent)
+    await asyncio.sleep(5)
+
+    # Update data.json with the guide channel ID
+    data.setdefault("channels", {})
+    data["channels"]["guide"] = guide_channel.id
+    update_server_data(guild.id, data)
+    print(f"[Output] Saved guide channel ID to data.json for guild {guild.id}")
+    return guide_channel
