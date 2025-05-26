@@ -53,6 +53,7 @@ bot.badges = load_json_data(BADGES_JSON_PATH)
 bot.types = load_json_data(TYPES_JSON_PATH)
 bot.items = load_json_data(ITEMS_JSON_PATH)
 bot.spawnrate = 60
+bot.pokeballrate = 3600
 
 # Start memory tracking
 tracemalloc.start()
@@ -81,9 +82,6 @@ async def on_ready():
 
     for shard_id, latency in bot.latencies:
         print(f"Shard ID: {shard_id} | Latency: {latency*1000:.2f}ms")
-    
-    bot.loop.create_task(wild_pokemon_spawn_clock(bot))
-    bot.loop.create_task(hourly_item_grant(bot))  # <-- Start hourly item grant as a task
 
 # In setup_hook, you can also add:
 async def setup_hook():
@@ -91,8 +89,8 @@ async def setup_hook():
     await bot.tree.sync()
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
     bot.loop.create_task(monitor_all_battle_channels_clock(bot))
-    bot.loop.create_task(hourly_item_grant(bot))  # <-- Start hourly item grant as a task
-
+    bot.loop.create_task(hourly_item_grant(bot))
+    
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook
 

@@ -86,23 +86,16 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
     if user_data is None:
         user_data = create_user_record(guild_id, user_id)
 
-    # Find the Pokémon object from bot.pokemon
     pokemon_obj = next((p for p in bot.pokemon if p.get("id") == pokemon_id), None)
     if not pokemon_obj:
-        print(f"[Output] Pokémon ID {pokemon_id} not found in bot.pokemon.")
         return "not_found"
 
-    # Add to Pokédex if not already present
     if pokemon_id not in user_data["pokedex"]:
         user_data["pokedex"].append(pokemon_id)
-        print(f"[Output] Added Pokémon ID {pokemon_id} to user {user_id}'s Pokédex.")
 
-    # Check if Pokémon already exists in active team
     if any(p.get("id") == pokemon_id for p in user_data["active_pokemon"]):
-        print(f"[Output] Pokémon ID {pokemon_id} already in user {user_id}'s active team. Not adding duplicate.")
         return "duplicate"
 
-    # If less than 6 active Pokémon, add directly
     if len(user_data["active_pokemon"]) < 6:
         user_data["active_pokemon"].append(pokemon_obj)
         update_user_power(user_data)
@@ -110,7 +103,6 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
         print(f"[Output] Added Pokémon {pokemon_obj.get('name', pokemon_obj.get('id'))} to user {user_id}'s active team.")
         return "success"
 
-    # If 6, prompt for replacement if interaction is provided
     if interaction is not None:
         class ReplacePokemonView(discord.ui.View):
             def __init__(self, active_pokemon):
@@ -124,7 +116,6 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
                 await interaction.response.send_message("Cancelled replacement.", ephemeral=True)
                 self.stop()
 
-        # Send prompt to user
         active_pokemon = user_data["active_pokemon"]
         description = "\n".join([
             f"{idx+1}: {poke.get('name', poke.get('id'))} (CP: {poke.get('cp', '?')})"
@@ -171,6 +162,50 @@ async def add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction=
     else:
         print(f"[Output] User {user_id} already has 6 active Pokémon. No interaction provided for replacement.")
         return "full"
+
+def add_pokemon_to_player_no_interaction(bot, guild_id, user_id, pokemon_id):
+    user_data = read_user_record(guild_id, user_id)
+    if user_data is None:
+        user_data = create_user_record(guild_id, user_id)
+
+    pokemon_obj = next((p for p in bot.pokemon if p.get("id") == pokemon_id), None)
+    if not pokemon_obj:
+        return "not_found"
+
+    if pokemon_id not in user_data["pokedex"]:
+        user_data["pokedex"].append(pokemon_id)
+
+    if any(p.get("id") == pokemon_id for p in user_data["active_pokemon"]):
+        return "duplicate"
+
+    if len(user_data["active_pokemon"]) < 6:
+        user_data["active_pokemon"].append(pokemon_obj)
+        update_user_power(user_data)
+        update_user_record(guild_id, user_id, user_data)
+        print(f"[Output] Added Pokémon {pokemon_obj.get('name', pokemon_obj.get('id'))} to user {user_id}'s active team.")
+        return "success"
+    else:
+        print(f"[Prompt] User {user_id} already has 6 active Pokémon:")
+        for idx, poke in enumerate(user_data["active_pokemon"]):
+            print(f"{idx+1}: {poke.get('name', poke.get('id'))} (CP: {poke.get('cp', '?')})")
+        try:
+            idx = int(input(f"Enter the number (1-6) of the Pokémon to replace for user {user_id}, or 0 to cancel: ")) - 1
+            if idx < 0 or idx >= 6:
+                print("[Prompt] Replacement cancelled or invalid.")
+                return "full"
+            removed = user_data["active_pokemon"].pop(idx)
+            if any(p.get("id") == pokemon_id for p in user_data["active_pokemon"]):
+                print(f"[Prompt] You already have {pokemon_obj.get('name', pokemon_obj.get('id'))} in your active team!")
+                user_data["active_pokemon"].insert(idx, removed)
+                return "duplicate"
+            user_data["active_pokemon"].append(pokemon_obj)
+            update_user_power(user_data)
+            update_user_record(guild_id, user_id, user_data)
+            print(f"[Output] Replaced Pokémon for user {user_id}: {removed.get('name', removed.get('id'))} -> {pokemon_obj.get('name', pokemon_obj.get('id'))}")
+            return "success"
+        except Exception as e:
+            print(f"[ERROR] Replacement selection failed: {e}")
+            return "timeout"
 
 def update_user_power(user_data):
     """

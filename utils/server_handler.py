@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import discord
 import asyncio
 
@@ -16,6 +17,51 @@ def ensure_servers_folder():
 
 # Ensure servers folder exists when this util loads
 ensure_servers_folder()
+
+def log_active_spawn(guild_id, pokemon_id, status="active", trainer=None, message_id=None):
+    servers_dir = os.path.join(os.getcwd(), "servers")
+    data_file = os.path.join(servers_dir, str(guild_id), "data.json")
+    if not os.path.isfile(data_file):
+        print(f"[WARN] No data.json found for guild {guild_id} to log spawn.")
+        return
+    with open(data_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    spawn_entry = {
+        "id": pokemon_id,
+        "spawn_time": int(time.time()),
+        "status": status,
+        "trainer": trainer
+    }
+    if message_id is not None:
+        spawn_entry["message_id"] = message_id
+    data["active_spawn"] = spawn_entry
+    with open(data_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+    print(f"[Output] Logged active spawn for guild {guild_id}: {spawn_entry}")
+
+def update_active_spawn_status(guild_id, pokemon_id, status, trainer):
+    servers_dir = os.path.join(os.getcwd(), "servers")
+    data_file = os.path.join(servers_dir, str(guild_id), "data.json")
+    if not os.path.isfile(data_file):
+        return
+
+    with open(data_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    updated = False
+    spawn = data.get("active_spawn")
+    if spawn and spawn["id"] == pokemon_id and spawn["status"] == "active":
+        spawn["status"] = status
+        spawn["trainer"] = trainer
+        spawn["spawn_time"] = int(time.time())  # Update spawn_time to now
+        data["active_spawn"] = spawn
+        updated = True
+
+    if updated:
+        with open(data_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+        print(f"[Output] Updated spawn {pokemon_id} to status '{status}' for guild {guild_id} (trainer: {trainer})")
+
 
 def setup_server_savedata(guild_id):
     os.makedirs(SERVERS_DIR, exist_ok=True)

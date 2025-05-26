@@ -1,8 +1,7 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-from utils.spawn_utils import generate_wild_pokemon  # Correct import location
-from utils.wild_utils import log_active_spawn
+from utils.wild_utils import log_active_spawn, generate_wild_pokemon
 from utils.capture_utils import CaptureButton
 
 class ForceSpawn(commands.Cog):

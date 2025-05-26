@@ -2,9 +2,10 @@ import os
 import json
 import discord
 import random
-from utils.player_handler import add_pokemon_to_player, read_user_record
-from utils.spawn_utils import update_active_spawn_status, update_wild_pokemon_message
-from utils.inventory_utils import has_item, get_item_amount, remove_item_from_inventory  # Add this import
+from utils.player_handler import add_pokemon_to_player, read_user_record, add_pokemon_to_player_no_interaction
+from utils.server_handler import update_active_spawn_status
+from utils.inventory_utils import get_item_amount, remove_item_from_inventory 
+from utils.pokeball_select_utils import prompt_for_pokeball
 
 POKEBALLS = [
     {"id": 1, "name": "Poké Ball"},
@@ -12,6 +13,42 @@ POKEBALLS = [
     {"id": 3, "name": "Ultra Ball"},
     {"id": 4, "name": "Master Ball"},
 ]
+
+async def update_wild_pokemon_message(bot, guild_id, status_message, new_embed=None):
+    servers_dir = os.path.join(os.getcwd(), "servers")
+    data_file = os.path.join(servers_dir, str(guild_id), "data.json")
+    if not os.path.isfile(data_file):
+        return False
+
+    with open(data_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    active_spawn = data.get("active_spawn")
+    if not active_spawn or "message_id" not in active_spawn:
+        return False
+
+    channels = data.get("channels", {})
+    wild_channel_id = channels.get("wild")
+    if not wild_channel_id:
+        return False
+
+    channel = bot.get_channel(int(wild_channel_id))
+    if not channel:
+        return False
+
+    try:
+        message = await channel.fetch_message(active_spawn["message_id"])
+        # Keep original content, append status message
+        original_content = message.content or ""
+        updated_content = f"{original_content}\n\n{status_message}"
+        await message.edit(
+            content=updated_content,
+            embed=new_embed if new_embed is not None else (message.embeds[0] if message.embeds else None),
+            view=None  # Remove the button
+        )
+        return True
+    except Exception as e:
+        return False
 
 def calculate_capture_success(player_power, pokemon_cp, pokeball_id=1):
     if player_power <= 0 or pokemon_cp <= 0:
@@ -31,27 +68,6 @@ def calculate_capture_success(player_power, pokemon_cp, pokeball_id=1):
     result = roll < success_chance
     print(f"[CAPTURE] player_power={player_power}, pokemon_cp={pokemon_cp}, pokeball_id={pokeball_id}, success_chance={success_chance:.2f}, roll={roll:.2f} -> {result}")
     return result
-
-class PokeballSelect(discord.ui.Select):
-    def __init__(self, available_balls):
-        options = [
-            discord.SelectOption(
-                label=f"{ball['name']} (x{ball['amount']})",
-                value=str(ball['id'])
-            )
-            for ball in available_balls
-        ]
-        super().__init__(placeholder="Choose a Poké Ball to use...", min_values=1, max_values=1, options=options)
-
-    async def callback(self, interaction: discord.Interaction):
-        self.view.selected_ball_id = int(self.values[0])
-        self.view.stop()
-
-class PokeballSelectView(discord.ui.View):
-    def __init__(self, available_balls, timeout=30):
-        super().__init__(timeout=timeout)
-        self.selected_ball_id = None
-        self.add_item(PokeballSelect(available_balls))
 
 class CaptureButton(discord.ui.View):
     def __init__(self, guild_id, pokemon_id):
@@ -95,20 +111,8 @@ class CaptureButton(discord.ui.View):
             except Exception as e:
                 print(f"[Edit Error] {e}")
             return
-        select_view = PokeballSelectView(available_balls)
-        await interaction.response.send_message(
-            "Which Poké Ball would you like to use?",
-            view=select_view,
-            ephemeral=True
-        )
-        await select_view.wait()
-        selected_ball_id = select_view.selected_ball_id
 
-        # Remove the Poké Ball selector message immediately after a selection or timeout
-        try:
-            await interaction.delete_original_response()
-        except Exception:
-            pass
+        selected_ball_id = await prompt_for_pokeball(interaction, available_balls)
 
         if not selected_ball_id:
             return
@@ -136,6 +140,7 @@ class CaptureButton(discord.ui.View):
                 status_message=f"🎉 {trainer_name} successfully captured {pokemon_obj.get('name', 'the Pokémon')}!"
             )
             result = await add_pokemon_to_player(bot, guild_id, user_id, pokemon_id, interaction)
+            print(f"[add_pokemon_to_player] result={result}")  # Log the result
             if result == "duplicate":
                 await interaction.followup.send(
                     f"You already have {pokemon_obj.get('name', 'the Pokémon')} in your active team!",
@@ -187,7 +192,6 @@ class CaptureButton(discord.ui.View):
             if spawn and spawn.get("id") == self.pokemon_id and spawn.get("status") == "active":
                 from utils.spawn_utils import update_active_spawn_status
                 update_active_spawn_status(self.guild_id, self.pokemon_id, "escaped", "System")
-                # Edit the message to remove the button and show that the Pokémon left
                 if self.message:
                     try:
                         await self.message.edit(
