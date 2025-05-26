@@ -11,6 +11,8 @@ from utils.wild_utils import wild_pokemon_spawn_clock
 from utils.battle_channel_utils import monitor_all_battle_channels_clock
 from utils.battle_commands_utils import on_message_battle_commands
 from utils.hourly_item_grant import hourly_item_grant
+import threading
+from utils.hourly_item_grant import hourly_item_grant_thread
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -83,7 +85,10 @@ async def on_ready():
         print(f"Shard ID: {shard_id} | Latency: {latency*1000:.2f}ms")
     
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
-    bot.loop.create_task(hourly_item_grant(bot))  # <-- Add this line
+    # Start hourly item grant in a separate thread
+    if not hasattr(bot, "hourly_item_grant_thread_started"):
+        threading.Thread(target=hourly_item_grant_thread, args=(bot,), daemon=True).start()
+        bot.hourly_item_grant_thread_started = True
 
 @bot.event
 async def on_guild_join(guild):
