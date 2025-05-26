@@ -120,9 +120,14 @@ class Pokedex(commands.Cog):
         embed.add_field(name="Gender", value=gender, inline=True)
         embed.add_field(name="Pronouns", value=pronouns, inline=True)
 
-        # Inventory
+        # Inventory (show item names, amounts, and descriptions using bot.items)
         if inventory:
-            inventory_str = ", ".join(str(item) for item in inventory)
+            item_lookup = {item["id"]: item for item in getattr(self.bot, "items", [])}
+            inventory_lines = []
+            for entry in inventory:
+                item = item_lookup.get(entry["id"], {"name": f"Item #{entry['id']}", "description": "No description."})
+                inventory_lines.append(f"**{item['name']}** × {entry['amount']}\n*{item['description']}*")
+            inventory_str = "\n\n".join(inventory_lines)
         else:
             inventory_str = "None"
         embed.add_field(name="Inventory", value=inventory_str, inline=False)

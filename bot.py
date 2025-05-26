@@ -10,6 +10,7 @@ from utils.config_utils import load_config
 from utils.wild_utils import wild_pokemon_spawn_clock
 from utils.battle_channel_utils import monitor_all_battle_channels_clock
 from utils.battle_commands_utils import on_message_battle_commands
+from utils.hourly_item_grant import hourly_item_grant
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -44,11 +45,13 @@ POKEMON_JSON_PATH = os.path.join("datastores", "pokemon.json")
 ABILITIES_JSON_PATH = os.path.join("datastores", "abilities.json")
 BADGES_JSON_PATH = os.path.join("datastores", "badges.json")
 TYPES_JSON_PATH = os.path.join("datastores", "types.json")
+ITEMS_JSON_PATH = os.path.join("datastores", "items.json")
 # Load Pokémon and abilities data into bot attributes
 bot.pokemon = load_json_data(POKEMON_JSON_PATH)
 bot.abilities = load_json_data(ABILITIES_JSON_PATH)
 bot.badges = load_json_data(BADGES_JSON_PATH)
 bot.types = load_json_data(TYPES_JSON_PATH)
+bot.items = load_json_data(ITEMS_JSON_PATH)
 bot.spawnrate = 60
 
 # Start memory tracking
@@ -80,6 +83,7 @@ async def on_ready():
         print(f"Shard ID: {shard_id} | Latency: {latency*1000:.2f}ms")
     
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
+    bot.loop.create_task(hourly_item_grant(bot))  # <-- Add this line
 
 @bot.event
 async def on_guild_join(guild):
@@ -91,6 +95,7 @@ async def setup_hook():
     await bot.tree.sync()
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
     bot.loop.create_task(monitor_all_battle_channels_clock(bot))  # Start monitoring all battle channels
+    bot.loop.create_task(hourly_item_grant(bot))  # <-- Add this line
 
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook

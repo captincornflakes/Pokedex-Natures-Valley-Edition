@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Poké Ball",
+    "cost": 200,
+    "description": "A device for catching wild Pokémon. It's thrown like a ball at a Pokémon, comfortably encapsulating its target."
+  },
+  {
+    "id": 2,
+    "name": "Great Ball",
+    "cost": 600,
+    "description": "A good, high-performance Ball that provides a higher Pokémon catch rate than a standard Poké Ball."
+  },
+  {
+    "id": 3,
+    "name": "Ultra Ball",
+    "cost": 1200,
+    "description": "An ultra-high performance Ball that provides a higher catch rate than a Great Ball."
+  },
+  {
+    "id": 4,
+    "name": "Master Ball",
+    "cost": 10000,
+    "description": "The best Ball with the ultimate level of performance. It will catch any Pokémon without fail."
+  },
+  {
+    "id": 8,
+    "name": "Fire Stone",
+    "cost": 3000,
+    "description": "A peculiar stone that makes certain species of Pokémon evolve. It has a fiery orange heart."
+  },
+  {
+    "id": 9,
+    "name": "Water Stone",
+    "cost": 3000,
+    "description": "A peculiar stone that makes certain species of Pokémon evolve. It is a clear, light blue."
+  },
+  {
+    "id": 10,
+    "name": "Thunder Stone",
+    "cost": 3000,
+    "description": "A peculiar stone that makes certain species of Pokémon evolve. It has a thunderbolt pattern."
+  },
+  {
+    "id": 11,
+    "name": "Leaf Stone",
+    "cost": 3000,
+    "description": "A peculiar stone that makes certain species of Pokémon evolve. It has a leaf pattern."
+  },
+  {
+    "id": 12,
+    "name": "Moon Stone",
+    "cost": 4000,
+    "description": "A mysterious stone that makes certain species of Pokémon evolve. It is as dark as the night sky."
+  }
+]

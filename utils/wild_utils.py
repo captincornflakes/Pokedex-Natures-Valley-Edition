@@ -7,8 +7,11 @@ import time
 from utils.capture_utils import CaptureButton
 from utils.spawn_utils import generate_wild_pokemon, update_wild_pokemon_message
 
+MIN_SPAWN_INTERVAL = 10  # seconds, adjust as needed
+
 async def spawn_wild_pokemon_in_all_servers(bot):
     servers_dir = os.path.join(os.getcwd(), "servers")
+    now = int(time.time())
     for guild_id in os.listdir(servers_dir):
         if random.random() > 0.5:
             continue
@@ -19,8 +22,8 @@ async def spawn_wild_pokemon_in_all_servers(bot):
         with open(data_file, "r", encoding="utf-8") as f:
             data = json.load(f)
         active_spawn = data.get("active_spawn")
-        now = int(time.time())
-        # If there is an active spawn, check if the message still has the capture button
+
+        # Prevent double spawn if previous is still active (existing logic)
         if active_spawn and active_spawn.get("status") == "active":
             channels = data.get("channels", {})
             wild_channel_id = channels.get("wild")
@@ -37,12 +40,16 @@ async def spawn_wild_pokemon_in_all_servers(bot):
                                 status_message="The wild Pokémon ran away!",
                                 new_embed=None
                             )
+                    except discord.NotFound as e:
+                        pass
                     except Exception as e:
                         print(f"[WARN] Could not update previous wild Pokémon message for guild {guild_id}: {e}")
-            # Mark the previous spawn as escaped
-            from utils.spawn_utils import update_active_spawn_status
-            update_active_spawn_status(guild_id, active_spawn["id"], "escaped", trainer=None)
-        # Now continue to spawn a new Pokémon as usual
+            continue  # <-- Prevent double spawn!
+
+        # NEW: Prevent spawning if last spawn was too recent
+        if active_spawn and "spawn_time" in active_spawn:
+            if now - int(active_spawn["spawn_time"]) < MIN_SPAWN_INTERVAL:
+                continue
 
         channels = data.get("channels", {})
         wild_channel_id = channels.get("wild")
