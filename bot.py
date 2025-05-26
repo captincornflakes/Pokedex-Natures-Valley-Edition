@@ -11,8 +11,6 @@ from utils.wild_utils import wild_pokemon_spawn_clock
 from utils.battle_channel_utils import monitor_all_battle_channels_clock
 from utils.battle_commands_utils import on_message_battle_commands
 from utils.hourly_item_grant import hourly_item_grant
-import threading
-from utils.hourly_item_grant import hourly_item_grant_thread
 
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -85,22 +83,15 @@ async def on_ready():
         print(f"Shard ID: {shard_id} | Latency: {latency*1000:.2f}ms")
     
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
-    # Start hourly item grant in a separate thread
-    if not hasattr(bot, "hourly_item_grant_thread_started"):
-        threading.Thread(target=hourly_item_grant_thread, args=(bot,), daemon=True).start()
-        bot.hourly_item_grant_thread_started = True
+    bot.loop.create_task(hourly_item_grant(bot))  # <-- Start hourly item grant as a task
 
-@bot.event
-async def on_guild_join(guild):
-    await bot.tree.sync(guild=guild)
-
-# Setup hook to load extensions
+# In setup_hook, you can also add:
 async def setup_hook():
     await load_extensions_from_folder('functions')
     await bot.tree.sync()
     bot.loop.create_task(wild_pokemon_spawn_clock(bot))
-    bot.loop.create_task(monitor_all_battle_channels_clock(bot))  # Start monitoring all battle channels
-    bot.loop.create_task(hourly_item_grant(bot))  # <-- Add this line
+    bot.loop.create_task(monitor_all_battle_channels_clock(bot))
+    bot.loop.create_task(hourly_item_grant(bot))  # <-- Start hourly item grant as a task
 
 # Assign setup_hook to the bot
 bot.setup_hook = setup_hook
